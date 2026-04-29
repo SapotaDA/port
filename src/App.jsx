@@ -59,7 +59,6 @@ function App() {
         <Skills />
         <Contact />
       </div>
-      </div>
 
       {/* Ambient Effects */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.05] mix-blend-overlay bg-[url('https://res.cloudinary.com/dzv9rq7qr/image/upload/v1682332841/noise_ovl7uz.png')]"></div>
