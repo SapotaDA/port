@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #020617;
+  color: #f8fafc;
+  overflow-x: hidden;
+  touch-action: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+canvas {
+  touch-action: none;
+  display: block;
+}
+
+/* Smooth scrolling and animations */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom styles for the 3D Monitor Screen */
+.monitor-screen {
+  pointer-events: auto !important;
+  transform-style: preserve-3d;
+  width: 1024px;
+  height: 640px;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.5);
+  border-radius: 10px;
+  border: 2px solid rgba(2, 6, 23, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.8);
+}
+
+/* Monitor screen scrollbar */
+.monitor-screen ::-webkit-scrollbar {
+  width: 4px;
+}
+.monitor-screen ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.monitor-screen ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.monitor-screen ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom scrollbar for Firefox */
+* {
+  scrollbar-color: rgba(56, 189, 248, 0.5) rgba(30, 41, 59, 0.5);
+  scrollbar-width: thin;
+}
+
+/* Animations */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes noise {
+  0%, 100% { transform: translate(0, 0) }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -10px) }
+  20%, 40%, 60%, 80% { transform: translate(15px, 5px) }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(56, 189, 248, 0.6); }
+}
+
+/* Noise overlay */
+.noise::after {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('https://res.cloudinary.com/dzv9rq7qr/image/upload/v1682332841/noise_ovl7uz.png') repeat;
+  opacity: 0.05;
+  z-index: 999;
+  pointer-events: none;
+  animation: noise 8s steps(10) infinite;
+}
+
+/* Utility classes */
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/80 backdrop-blur-2xl border border-slate-700/50;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-400 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)];
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border border-sky-500/50 text-sky-400 font-semibold rounded-lg hover:bg-sky-500/10 transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .section-title {
+    @apply text-5xl md:text-6xl font-bold mb-4;
+  }
+}
