@@ -109,7 +109,7 @@ export const DesktopUI = () => {
                         </div>
                     </div>
                     <div className="p-6 bg-sky-500/5 border border-sky-500/10 rounded-xl font-mono text-sm leading-relaxed">
-                        <span className="text-sky-500 mr-2">></span> I specialize in building high-performance decentralized systems and immersive web experiences. 
+                        <span className="text-sky-500 mr-2">{'>'}</span> I specialize in building high-performance decentralized systems and immersive web experiences. 
                         My workflow bridges the gap between low-level optimization and high-level abstract design.
                     </div>
                 </div>
