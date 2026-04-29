@@ -10,9 +10,9 @@ import { Contact } from "./components/Contact";
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-[#020617] noise">
+    <div className="min-h-screen w-screen bg-[#020617] noise relative">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-slate-950/80 backdrop-blur-lg border-b border-sky-500/10 z-40 flex items-center px-4 md:px-8">
+      <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-slate-950/80 backdrop-blur-lg border-b border-sky-500/10 z-50 flex items-center px-4 md:px-8">
         <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
           <h1 className="text-lg md:text-xl font-bold text-white tracking-tight">AARAV<span className="text-sky-400">.DEV</span></h1>
           <div className="hidden md:flex gap-8 items-center">
@@ -27,8 +27,8 @@ function App() {
         </div>
       </nav>
 
-      {/* 3D Canvas Section */}
-      <div className="fixed top-14 md:top-16 left-0 right-0 bottom-0">
+      {/* 3D Canvas Background */}
+      <div className="fixed top-14 md:top-16 left-0 right-0 bottom-0 z-0">
         <Canvas
           shadows
           camera={{ position: [0, 2, 8], fov: 35 }}
@@ -41,8 +41,8 @@ function App() {
             </ScrollControls>
           </Suspense>
         </Canvas>
-        
-        <Loader 
+
+        <Loader
           containerStyles={{ background: '#020617' }}
           innerStyles={{ background: '#1e293b' }}
           barStyles={{ background: '#38bdf8' }}
@@ -51,13 +51,14 @@ function App() {
         />
       </div>
 
-      {/* Overlay Content Sections */}
+      {/* Content Sections */}
       <div className="relative z-10 pointer-events-auto">
         <Hero />
         <About />
         <Projects />
         <Skills />
         <Contact />
+      </div>
       </div>
 
       {/* Ambient Effects */}
