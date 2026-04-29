@@ -21,7 +21,7 @@ export const About = () => {
   ];
 
   return (
-    <section className="h-screen w-screen flex items-center justify-center max-w-7xl mx-auto px-8 relative" id="about">
+    <section className="min-h-screen w-screen flex items-center justify-center max-w-7xl mx-auto px-4 md:px-8 relative py-16 md:py-0" id="about">
       <div className="w-full">
         <motion.div
           initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export const About = () => {
           <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-transparent rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

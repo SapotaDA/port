@@ -30,7 +30,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="h-auto w-screen flex flex-col justify-center max-w-7xl mx-auto px-8 py-20" id="projects">
+    <section className="w-screen flex flex-col justify-center max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20" id="projects">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -44,7 +44,7 @@ export const Projects = () => {
         <p className="text-slate-400 mt-6 text-lg">Showcasing my recent work and technical expertise</p>
       </motion.div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}

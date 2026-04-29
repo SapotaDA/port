@@ -26,7 +26,7 @@ export const Contact = () => {
   ];
 
   return (
-    <section className="h-auto w-screen flex flex-col justify-center items-center max-w-7xl mx-auto px-8 py-20" id="contact">
+    <section className="w-screen flex flex-col justify-center items-center max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20" id="contact">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -40,7 +40,7 @@ export const Contact = () => {
         <p className="text-slate-400 mt-6 text-lg">Have a project in mind? I'd love to hear from you.</p>
       </motion.div>
 
-      <div className="w-full grid md:grid-cols-3 gap-8 mb-16">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
         {contactMethods.map((method, index) => {
           const Icon = method.icon;
           return (
@@ -69,8 +69,8 @@ export const Contact = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         className="w-full max-w-2xl"
       >
-        <form onSubmit={handleSubmit} className="space-y-6 p-10 rounded-3xl bg-gradient-to-br from-sky-500/5 to-blue-500/5 border border-sky-500/20 backdrop-blur-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 p-6 md:p-10 rounded-3xl bg-gradient-to-br from-sky-500/5 to-blue-500/5 border border-sky-500/20 backdrop-blur-sm w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div className="space-y-2">
               <label className="text-sm text-slate-300 font-medium ml-1">Full Name *</label>
               <input
@@ -79,30 +79,30 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-white/5 border border-sky-500/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-sky-500/20 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all text-sm md:text-base"
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm text-slate-300 font-medium ml-1">Email Address *</label>
+              <label className="text-xs md:text-sm text-slate-300 font-medium ml-1">Email Address *</label>
               <input
                 type="email"
                 placeholder="your@email.com"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-white/5 border border-sky-500/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-sky-500/20 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all text-sm md:text-base"
               />
             </div>
           </div>
           <div className="space-y-2">
             <label className="text-sm text-slate-300 font-medium ml-1">Message *</label>
             <textarea
-              rows="5"
+              rows="4"
               placeholder="Tell me about your project or inquiry..."
               required
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full bg-white/5 border border-sky-500/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all resize-none"
+              className="w-full bg-white/5 border border-sky-500/20 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all resize-none text-sm md:text-base"
             />
           </div>
 
@@ -110,7 +110,7 @@ export const Contact = () => {
             type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full bg-gradient-to-r from-sky-500 to-blue-500 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all"
+            className="w-full bg-gradient-to-r from-sky-500 to-blue-500 text-white font-bold py-3 md:py-4 rounded-lg md:rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all text-sm md:text-base"
           >
             <Send size={18} />
             {submitted ? "Message Sent! ✓" : "Send Message"}
