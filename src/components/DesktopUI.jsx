@@ -46,7 +46,7 @@ export const DesktopUI = () => {
     ];
 
     return (
-        <div className="w-[1024px] h-[640px] bg-[#020617] relative font-sans select-none overflow-hidden border-4 border-sky-900/50 rounded-xl shadow-[inset_0_0_100px_rgba(56,189,248,0.1)]">
+        <div className="w-full max-w-[1024px] h-[640px] sm:h-[520px] mx-auto bg-[#020617] relative font-sans select-none overflow-hidden border-4 border-sky-900/50 rounded-xl shadow-[inset_0_0_100px_rgba(56,189,248,0.1)]">
             {/* Animated Grid Overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
             
