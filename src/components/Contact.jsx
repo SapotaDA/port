@@ -1,16 +1,49 @@
 import { motion } from "framer-motion";
 import { Send, Github, Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setLoading(true);
+    setError("");
+
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: "aaravuniyal1@gmail.com"
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        "service_portfolio_contact", // Replace with your EmailJS service ID
+        "template_portfolio_contact", // Replace with your EmailJS template ID
+        templateParams,
+        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+      );
+
+      if (response.status === 200) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError("Failed to send message. Please try again or email directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactMethods = [
@@ -116,14 +149,21 @@ export const Contact = () => {
             />
           </div>
 
+          {error && (
+            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+              {error}
+            </div>
+          )}
+          
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full bg-gradient-to-r from-sky-500 to-blue-500 text-white font-bold py-3 md:py-4 rounded-lg md:rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all text-sm md:text-base"
+            disabled={loading}
+            whileHover={{ scale: loading ? 1 : 1.02 }}
+            whileTap={{ scale: loading ? 1 : 0.98 }}
+            className="w-full bg-gradient-to-r from-sky-500 to-blue-500 text-white font-bold py-3 md:py-4 rounded-lg md:rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Send size={18} />
-            {submitted ? "Message Sent! ✓" : "Send Message"}
+            <Send size={18} className={loading ? "animate-spin" : ""} />
+            {loading ? "Sending..." : submitted ? "Message Sent! ✓" : "Send Message"}
           </motion.button>
         </form>
       </motion.div>
