@@ -8,7 +8,9 @@ const skillCategories = [
       { name: "React", level: 95 },
       { name: "Next.js", level: 90 },
       { name: "Tailwind CSS", level: 95 },
-      { name: "Three.js", level: 85 }
+      { name: "Three.js", level: 85 },
+      { name: "JavaScript ES6+", level: 92 },
+      { name: "HTML5 & CSS3", level: 95 }
     ]
   },
   {
@@ -17,7 +19,9 @@ const skillCategories = [
       { name: "Node.js", level: 92 },
       { name: "Express.js", level: 90 },
       { name: "MongoDB", level: 88 },
-      { name: "PostgreSQL", level: 85 }
+      { name: "PostgreSQL", level: 85 },
+      { name: "REST APIs", level: 90 },
+      { name: "JWT Authentication", level: 85 }
     ]
   },
   {
@@ -26,7 +30,9 @@ const skillCategories = [
       { name: "Git & GitHub", level: 90 },
       { name: "Docker", level: 80 },
       { name: "AWS", level: 82 },
-      { name: "Figma", level: 75 }
+      { name: "Chrome Extensions", level: 85 },
+      { name: "WebGL", level: 80 },
+      { name: "Framer Motion", level: 88 }
     ]
   }
 ];
@@ -44,7 +50,7 @@ export const Skills = () => {
           Technical <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">Skills</span>
         </h2>
         <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-transparent rounded-full"></div>
-        <p className="text-slate-400 mt-6 text-lg">Proficiency in modern technologies and frameworks</p>
+        <p className="text-slate-400 mt-6 text-lg">Web development expertise with modern frameworks and tools</p>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
@@ -94,7 +100,7 @@ export const Skills = () => {
         className="mt-16 p-8 rounded-[2rem] bg-gradient-to-r from-sky-500/5 to-blue-500/5 border border-sky-500/20 text-center shadow-[0_20px_80px_rgba(0,0,0,0.4)]"
       >
         <p className="text-slate-300 text-lg">
-          Passionate about continuous learning and staying updated with the latest industry trends and technologies.
+          Continuously expanding my web development skills and staying current with the latest frameworks, tools, and best practices in the industry.
         </p>
       </motion.div>
     </section>

@@ -61,7 +61,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, type: "spring", damping: 12 }}
         >
-          CYBER DEVELOPER & 
+          WEB DEVELOPER & 
           <motion.span 
             className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent"
             animate={{ 
@@ -74,7 +74,7 @@ export const Hero = () => {
               WebkitBackgroundClip: 'text'
             }}
           >
-            DIGITAL ARCHITECT
+            DIGITAL CREATOR
           </motion.span>
           <motion.div
             className="inline-block ml-2"
@@ -91,8 +91,8 @@ export const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
         >
-          I craft immersive cyber experiences with cutting-edge technologies and neon-infused design.
-          <span className="block text-sm md:text-base mt-3 text-purple-400">Specialized in React, Node.js, Three.js, and digital reality systems.</span>
+          I build modern web applications with cutting-edge technologies and immersive user experiences.
+          <span className="block text-sm md:text-base mt-3 text-purple-400">Specialized in React, Node.js, Three.js, and interactive web development.</span>
         </motion.p>
 
         <motion.div 
@@ -101,7 +101,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          {['NEON_INTERFACES', 'CYBER_SYSTEMS', 'DIGITAL_REALMS', 'QUANTUM_CODE'].map((item, index) => (
+          {['WEB_APPS', 'INTERFACES', 'FULL_STACK', 'DIGITAL_EXPERIENCES'].map((item, index) => (
             <motion.span 
               key={index} 
               className="px-3 py-2 rounded-full bg-purple-500/20 border border-pink-500/30 text-purple-200 text-xs md:text-sm"
@@ -134,7 +134,7 @@ export const Hero = () => {
           >
             <motion.div className="flex items-center gap-2" animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
               <Zap size={16} className="text-cyan-400" />
-              <span>ENTER_CYBER_SPACE</span>
+              <span>VIEW_PROJECTS</span>
             </motion.div>
           </motion.a>
           <motion.a 
@@ -143,7 +143,7 @@ export const Hero = () => {
             whileHover={{ scale: 1.05, borderColor: 'rgba(255, 0, 110, 0.8)', color: '#ff006e' }}
             whileTap={{ scale: 0.95 }}
           >
-            CONNECT_MATRIX
+            CONNECT_NOW
           </motion.a>
         </motion.div>
       </motion.div>
