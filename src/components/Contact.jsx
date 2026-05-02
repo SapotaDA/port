@@ -15,6 +15,12 @@ export const Contact = () => {
     setError("");
 
     try {
+      // Check if EmailJS is configured
+      if ("default_service" === "default_service" || "default_template" === "default_template" || "default_public_key" === "default_public_key") {
+        setError("Email service not configured yet. Please email directly at aaravuniyal1@gmail.com or follow the setup instructions.");
+        return;
+      }
+
       // EmailJS configuration
       const templateParams = {
         from_name: formData.name,
@@ -40,7 +46,7 @@ export const Contact = () => {
       }
     } catch (err) {
       console.error("EmailJS error:", err);
-      setError("Failed to send message. Please try again or email directly.");
+      setError("Email service not configured yet. Please email directly at aaravuniyal1@gmail.com or follow the setup instructions.");
     } finally {
       setLoading(false);
     }
