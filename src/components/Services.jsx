@@ -68,7 +68,7 @@ export const Services = () => {
   const handleContact = () => {
     const subject = encodeURIComponent("Web Development Services Inquiry");
     const body = encodeURIComponent("Hi Aarav, I'm interested in your web development services. Can we discuss my project?");
-    window.location.href = `mailto:aaravuniyal1@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:aaravuniyal3@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (

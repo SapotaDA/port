@@ -24,7 +24,7 @@ export const Contact = () => {
       );
       
       // Open email client with pre-filled data
-      window.location.href = `mailto:aaravuniyal1@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:aaravuniyal3@gmail.com?subject=${subject}&body=${body}`;
       
       // Show success message
       setSubmitted(true);
@@ -33,14 +33,14 @@ export const Contact = () => {
       
     } catch (err) {
       console.error("Email error:", err);
-      setError("Failed to open email client. Please email directly at aaravuniyal1@gmail.com");
+      setError("Failed to open email client. Please email directly at aaravuniyal3@gmail.com");
     } finally {
       setLoading(false);
     }
   };
 
   const contactMethods = [
-    { icon: Mail, label: "Email", value: "aaravuniyal1@gmail.com", href: "mailto:aaravuniyal1@gmail.com" },
+    { icon: Mail, label: "Email", value: "aaravuniyal3@gmail.com", href: "mailto:aaravuniyal3@gmail.com" },
     { icon: Github, label: "GitHub", value: "github.com/SapotaDA", href: "https://github.com/SapotaDA" },
     { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/aarav-uniyal-24943222a", href: "https://www.linkedin.com/in/aarav-uniyal-24943222a/" },
   ];
