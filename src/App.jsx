@@ -3,28 +3,36 @@ import { ScrollControls, Loader } from "@react-three/drei";
 import { Experience } from "./components/Experience";
 import { Suspense } from "react";
 import { Hero } from "./components/Hero";
-import { DesktopUI } from "./components/DesktopUI";
 import { About } from "./components/About";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
+import { motion } from 'framer-motion';
 
 function App() {
   return (
-    <div className="min-h-screen w-screen bg-[#020617] noise relative overflow-hidden">
+    <div className="min-h-screen w-screen bg-[#0a0a0f] noise relative overflow-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-slate-950/80 backdrop-blur-lg border-b border-sky-500/10 z-50 flex items-center px-4 md:px-8">
-        <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
-          <h1 className="text-lg md:text-xl font-bold text-white tracking-tight">AARAV<span className="text-sky-400">.DEV</span></h1>
-          <div className="hidden md:flex gap-8 items-center">
-            <a href="#projects" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Work</a>
-            <a href="#skills" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Skills</a>
-            <a href="#contact" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Contact</a>
-            <a href="#" className="px-4 py-2 bg-sky-500 text-slate-950 font-semibold rounded-lg hover:bg-sky-400 transition-all text-sm">Resume</a>
-          </div>
-          <div className="md:hidden flex gap-2">
-            <a href="#contact" className="px-3 py-1.5 bg-sky-500 text-slate-950 font-semibold rounded text-xs hover:bg-sky-400 transition-all">Contact</a>
-          </div>
+      <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-black/90 backdrop-blur-lg border-b border-purple-500/20 z-50 flex items-center px-4 md:px-8">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+          <span className="text-sm md:text-base font-bold text-pink-500 glitch">AARAV.CYBER</span>
+        </div>
+        <div className="flex-1" />
+        <div className="flex items-center gap-6">
+          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'].map((item, index) => (
+            <motion.a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-xs md:text-sm font-mono text-purple-400 hover:text-pink-500 transition-colors"
+              whileHover={{ scale: 1.1, textShadow: '0 0 10px #ff006e' }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {item}
+            </motion.a>
+          ))}
         </div>
       </nav>
 
@@ -50,11 +58,11 @@ function App() {
         </Canvas>
 
         <Loader
-          containerStyles={{ background: '#020617' }}
-          innerStyles={{ background: '#1e293b' }}
-          barStyles={{ background: '#38bdf8' }}
-          dataStyles={{ color: '#38bdf8', fontFamily: 'monospace' }}
-          dataInterpolation={(p) => `LOADING... ${p.toFixed(0)}%`}
+          containerStyles={{ background: '#0a0a0f' }}
+          innerStyles={{ background: '#1a1a2e' }}
+          barStyles={{ background: 'linear-gradient(45deg, #ff006e, #8338ec)' }}
+          dataStyles={{ color: '#ff006e', fontFamily: 'Orbitron, monospace' }}
+          dataInterpolation={(p) => `LOADING CYBER_SPACE... ${p.toFixed(0)}%`}
         />
       </div>
 
@@ -64,10 +72,7 @@ function App() {
         <section className="w-screen flex justify-center px-4 md:px-8 py-12 md:py-20">
           <div className="w-full max-w-7xl">
             <div className="mb-8 text-center">
-              <p className="text-slate-400 text-base md:text-lg">Explore a glimpse of my interactive workspace.</p>
-            </div>
-            <div className="overflow-x-auto">
-              <DesktopUI />
+              <p className="text-slate-400 text-base md:text-lg">Explore my interactive 3D workspace below.</p>
             </div>
           </div>
         </section>
@@ -77,9 +82,9 @@ function App() {
         <Contact />
       </div>
 
-      {/* Ambient Effects */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.05] mix-blend-overlay bg-[url('https://res.cloudinary.com/dzv9rq7qr/image/upload/v1682332841/noise_ovl7uz.png')]"></div>
-      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-t from-sky-500/5 to-transparent"></div>
+      {/* Ambient Effects - Cyberpunk */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://res.cloudinary.com/dzv9rq7qr/image/upload/v1682332841/noise_ovl7uz.png')]"></div>
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-500/5 via-pink-500/3 to-transparent"></div>
     </div>
   );
 }

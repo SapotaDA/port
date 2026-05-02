@@ -54,8 +54,12 @@ export const Skills = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: categoryIndex * 0.1 }}
+            className="rounded-[1.8rem] border border-sky-500/10 bg-black/90 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
           >
-            <h3 className="text-xl font-semibold mb-8 text-white">{category.name}</h3>
+            <div className="flex items-center gap-3 mb-8">
+              <Star size={20} className="text-sky-400" />
+              <h3 className="text-xl font-semibold text-white">{category.name}</h3>
+            </div>
             <div className="space-y-6">
               {category.skills.map((skill, skillIndex) => (
                 <motion.div
@@ -68,7 +72,7 @@ export const Skills = () => {
                     <span className="font-medium text-slate-300">{skill.name}</span>
                     <span className="text-xs text-sky-400 font-semibold">{skill.level}%</span>
                   </div>
-                  <div className="w-full h-2 bg-sky-500/10 rounded-full overflow-hidden border border-sky-500/20">
+                  <div className="w-full h-2 bg-sky-500/10 rounded-full overflow-hidden border border-sky-500/10">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
@@ -87,7 +91,7 @@ export const Skills = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-sky-500/10 to-blue-500/10 border border-sky-500/30 text-center"
+        className="mt-16 p-8 rounded-[2rem] bg-gradient-to-r from-sky-500/5 to-blue-500/5 border border-sky-500/20 text-center shadow-[0_20px_80px_rgba(0,0,0,0.4)]"
       >
         <p className="text-slate-300 text-lg">
           Passionate about continuous learning and staying updated with the latest industry trends and technologies.

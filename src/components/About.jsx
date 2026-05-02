@@ -47,6 +47,13 @@ export const About = () => {
             <p className="text-lg text-slate-300 leading-relaxed">
               My approach combines technical excellence with creative thinking. I believe in writing clean, maintainable code and continuously learning emerging technologies. Every project is an opportunity to push boundaries and deliver exceptional results.
             </p>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              {['Motion-driven interactions', 'Brand-forward interfaces', 'Performance-first architecture', 'Cross-platform delivery'].map((item, index) => (
+                <span key={index} className="text-sm text-slate-300 bg-slate-950/70 border border-sky-500/10 rounded-2xl px-4 py-3">
+                  {item}
+                </span>
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
