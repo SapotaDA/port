@@ -191,7 +191,6 @@ const TechOrb = ({ icon, position, color }) => (
                 color="#ffffff"
                 anchorX="center"
                 anchorY="middle"
-                font="/fonts/orbitron.woff"
             >
                 {icon}
             </Text>

@@ -83,7 +83,7 @@ function App() {
           containerStyles={{ background: '#0a0a0f' }}
           innerStyles={{ background: '#1a1a2e' }}
           barStyles={{ background: 'linear-gradient(45deg, #ff006e, #8338ec)' }}
-          dataStyles={{ color: '#ff006e', fontFamily: 'Orbitron, monospace' }}
+          dataStyles={{ color: '#ff006e', fontFamily: 'Courier New, monospace' }}
           dataInterpolation={(p) => `LOADING CYBER_SPACE... ${p.toFixed(0)}%`}
         />
       </div>

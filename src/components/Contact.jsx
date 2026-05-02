@@ -25,10 +25,10 @@ export const Contact = () => {
 
       // Send email using EmailJS
       const response = await emailjs.send(
-        "service_portfolio_contact", // Replace with your EmailJS service ID
-        "template_portfolio_contact", // Replace with your EmailJS template ID
+        "default_service", // Replace with your EmailJS service ID
+        "default_template", // Replace with your EmailJS template ID
         templateParams,
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        "default_public_key" // Replace with your EmailJS public key
       );
 
       if (response.status === 200) {
