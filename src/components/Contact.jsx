@@ -14,42 +14,12 @@ export const Contact = () => {
     setLoading(true);
     setError("");
 
-    try {
-      // Check if EmailJS is configured
-      if ("default_service" === "default_service" || "default_template" === "default_template" || "default_public_key" === "default_public_key") {
-        setError("Email service not configured yet. Please email directly at aaravuniyal1@gmail.com or follow the setup instructions.");
-        return;
-      }
-
-      // EmailJS configuration
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: "aaravuniyal1@gmail.com"
-      };
-
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        "default_service", // Replace with your EmailJS service ID
-        "default_template", // Replace with your EmailJS template ID
-        templateParams,
-        "default_public_key" // Replace with your EmailJS public key
-      );
-
-      if (response.status === 200) {
-        setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        setError("Failed to send message. Please try again.");
-      }
-    } catch (err) {
-      console.error("EmailJS error:", err);
-      setError("Email service not configured yet. Please email directly at aaravuniyal1@gmail.com or follow the setup instructions.");
-    } finally {
-      setLoading(false);
-    }
+    // EmailJS is not configured yet - show setup message
+    setError("Email service not configured yet. Please email directly at aaravuniyal1@gmail.com or follow the EMAILJS_SETUP.md instructions.");
+    
+    // Don't attempt to send email until properly configured
+    setLoading(false);
+    return;
   };
 
   const contactMethods = [
