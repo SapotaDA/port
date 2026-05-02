@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
+import { Services } from "./components/Services";
 import { Contact } from "./components/Contact";
 import { motion } from 'framer-motion';
 import CinematicIntro from "./components/animations/CinematicIntro";
@@ -41,7 +42,7 @@ function App() {
         </div>
         <div className="flex-1" />
         <div className="flex items-center gap-6">
-          {['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'].map((item, index) => (
+          {['HOME', 'ABOUT', 'PROJECTS', 'SERVICES', 'CONTACT'].map((item, index) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -100,6 +101,7 @@ function App() {
         <About />
         <Projects />
         <Skills />
+        <Services />
         <Contact />
       </div>
 
