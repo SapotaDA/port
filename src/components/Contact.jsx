@@ -14,12 +14,29 @@ export const Contact = () => {
     setLoading(true);
     setError("");
 
-    // EmailJS is not configured yet - show setup message
-    setError("Email service not configured yet. Please email directly at aaravuniyal1@gmail.com or follow the EMAILJS_SETUP.md instructions.");
-    
-    // Don't attempt to send email until properly configured
-    setLoading(false);
-    return;
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Message:\n${formData.message}`
+      );
+      
+      // Open email client with pre-filled data
+      window.location.href = `mailto:aaravuniyal1@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Show success message
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setSubmitted(false), 5000);
+      
+    } catch (err) {
+      console.error("Email error:", err);
+      setError("Failed to open email client. Please email directly at aaravuniyal1@gmail.com");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactMethods = [
