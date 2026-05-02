@@ -17,17 +17,8 @@ export default defineConfig({
         drop_console: true,
       },
     },
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'three': ['three'],
-          'drei': ['@react-three/drei'],
-          'fiber': ['@react-three/fiber'],
-        },
-      },
-    },
   },
   optimizeDeps: {
-    include: ['three', '@react-three/fiber', '@react-three/drei', 'framer-motion'],
+    include: ['framer-motion'],
   },
 })

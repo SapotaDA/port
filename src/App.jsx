@@ -1,5 +1,3 @@
-import { Canvas } from "@react-three/fiber";
-import { ScrollControls, Loader } from "@react-three/drei";
 import { Suspense, useState, useEffect } from "react";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -9,7 +7,6 @@ import { Services } from "./components/Services";
 import { Contact } from "./components/Contact";
 import { motion } from 'framer-motion';
 import CinematicIntro from "./components/animations/CinematicIntro";
-import { Experience } from "./components/3d/Experience";
 import "./styles/index.css";
 
 function App() {
@@ -64,37 +61,13 @@ function App() {
         <div className="absolute left-1/2 top-[32%] h-56 w-56 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl opacity-70 animate-glow" />
       </div>
 
-      {/* 3D Canvas Background */}
-      <div className="fixed top-14 md:top-16 left-0 right-0 bottom-0 z-0 pointer-events-none">
-        <Canvas
-          shadows
-          camera={{ position: [0, 2, 8], fov: 35 }}
-          dpr={[1, 2]}
-          style={{ touchAction: 'none' }}
-        >
-          <Suspense fallback={null}>
-            <ScrollControls pages={4} damping={0.15}>
-              <Experience />
-            </ScrollControls>
-          </Suspense>
-        </Canvas>
-
-        <Loader
-          containerStyles={{ background: '#0a0a0f' }}
-          innerStyles={{ background: '#1a1a2e' }}
-          barStyles={{ background: 'linear-gradient(45deg, #ff006e, #8338ec)' }}
-          dataStyles={{ color: '#ff006e', fontFamily: 'Courier New, monospace' }}
-          dataInterpolation={(p) => `LOADING CYBER_SPACE... ${p.toFixed(0)}%`}
-        />
-      </div>
-
       {/* Content Sections */}
       <div className="relative z-10 pointer-events-auto">
         <Hero />
         <section className="w-screen flex justify-center px-4 md:px-8 py-12 md:py-20">
           <div className="w-full max-w-7xl">
             <div className="mb-8 text-center">
-              <p className="text-slate-400 text-base md:text-lg">Explore my interactive 3D workspace below.</p>
+              <p className="text-slate-400 text-base md:text-lg">Welcome to my portfolio. Explore my work and services below.</p>
             </div>
           </div>
         </section>

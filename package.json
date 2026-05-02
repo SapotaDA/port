@@ -2,7 +2,7 @@
   "name": "aarav-portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "Professional 3D interactive portfolio built with React, Three.js, and modern web technologies",
+  "description": "Professional portfolio built with React and modern web technologies",
   "type": "module",
   "author": "Aarav",
   "license": "MIT",
@@ -14,22 +14,18 @@
   },
   "keywords": [
     "portfolio",
-    "3d",
     "react",
-    "three.js",
-    "webgl",
+    "web development",
+    "modern",
     "interactive"
   ],
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@react-three/drei": "^9.105.6",
-    "@react-three/fiber": "^8.16.2",
     "framer-motion": "^11.1.7",
     "gsap": "^3.12.5",
     "lucide-react": "^0.378.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "three": "^0.164.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
