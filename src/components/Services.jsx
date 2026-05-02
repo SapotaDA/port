@@ -8,7 +8,6 @@ export const Services = () => {
       title: "Custom Web Development",
       description: "Full-stack web applications built with modern technologies like React, Node.js, and MongoDB. Tailored solutions for your specific business needs.",
       features: ["React/Next.js Development", "Node.js Backend", "Database Design", "API Development"],
-      price: "Starting at $1,500",
       timeline: "2-4 weeks",
       popular: true
     },
@@ -17,7 +16,6 @@ export const Services = () => {
       title: "E-Commerce Platforms",
       description: "Complete online stores with payment processing, inventory management, and admin dashboards. Scalable solutions for growing businesses.",
       features: ["Payment Integration", "Product Management", "Admin Dashboard", "Shopping Cart"],
-      price: "Starting at $2,500",
       timeline: "3-6 weeks",
       popular: false
     },
@@ -26,7 +24,6 @@ export const Services = () => {
       title: "Responsive Web Design",
       description: "Mobile-first design that works perfectly on all devices. Modern UI/UX with smooth animations and excellent user experience.",
       features: ["Mobile-First Design", "Cross-Platform", "Modern UI/UX", "Performance Optimization"],
-      price: "Starting at $1,000",
       timeline: "1-3 weeks",
       popular: false
     },
@@ -35,7 +32,6 @@ export const Services = () => {
       title: "API Development",
       description: "RESTful APIs and backend services for your applications. Secure, scalable, and well-documented solutions.",
       features: ["REST APIs", "GraphQL", "Authentication", "Database Integration"],
-      price: "Starting at $1,200",
       timeline: "2-3 weeks",
       popular: false
     },
@@ -44,7 +40,6 @@ export const Services = () => {
       title: "UI/UX Design",
       description: "Beautiful, intuitive interfaces that delight users. Modern design principles with accessibility and performance in mind.",
       features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-      price: "Starting at $800",
       timeline: "1-2 weeks",
       popular: false
     },
@@ -53,7 +48,6 @@ export const Services = () => {
       title: "Performance Optimization",
       description: "Speed up your existing website with optimization techniques. Better performance, higher conversions, and improved SEO.",
       features: ["Speed Optimization", "SEO Enhancement", "Code Auditing", "Performance Monitoring"],
-      price: "Starting at $600",
       timeline: "1-2 weeks",
       popular: false
     }
@@ -122,9 +116,6 @@ export const Services = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-                    <p className={`text-sm ${service.popular ? 'text-pink-400' : 'text-sky-400'} font-medium`}>
-                      {service.price}
-                    </p>
                   </div>
                 </div>
 
