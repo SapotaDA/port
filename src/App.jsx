@@ -1,6 +1,5 @@
 import { Canvas } from "@react-three/fiber";
 import { ScrollControls, Loader } from "@react-three/drei";
-import { Experience } from "./components/Experience";
 import { Suspense, useState, useEffect } from "react";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -8,7 +7,9 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { motion } from 'framer-motion';
-import CinematicIntro from "./components/CinematicIntro";
+import CinematicIntro from "./components/animations/CinematicIntro";
+import { Experience } from "./components/3d/Experience";
+import "./styles/index.css";
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);

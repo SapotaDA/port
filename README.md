@@ -1,17 +1,26 @@
-# Aarav's 3D Scroll Portfolio
+# Aarav's Cyberpunk Gaming Portfolio
 
-A modern, high-performance 3D developer portfolio built with React, Three.js, and React Three Fiber.
+A cutting-edge cyberpunk-themed 3D developer portfolio with cinematic intro, gaming character, and immersive visual effects.
 
-## Tech Stack
-- **React (Vite)**
-- **Three.js**
-- **React Three Fiber**
-- **React Three Drei** (for ScrollControls, Float, etc.)
-- **Tailwind CSS** (for styling)
-- **Framer Motion** (for UI animations)
-- **Lucide React** (for icons)
+## 🎮 Features
+- **Cinematic Intro**: 4.5-second animated opening with initialize button
+- **3D Gaming Character**: Animated cyberpunk avatar with energy effects
+- **Cyberpunk Theme**: Neon pink, purple, and cyan color palette
+- **Interactive DesktopUI**: Game-like interface with spring animations
+- **3D Scene**: Dynamic camera movement with mouse interaction
+- **Particle Systems**: Multi-colored floating particles and effects
+- **Responsive Design**: Optimized for all screen sizes
 
-## Getting Started
+## 🛠 Tech Stack
+- **React (Vite)** - Frontend framework
+- **Three.js** - 3D graphics
+- **React Three Fiber** - React renderer for Three.js
+- **React Three Drei** - Helper components and utilities
+- **Framer Motion** - UI animations and transitions
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Icon library
+
+## 🚀 Getting Started
 
 1. **Install dependencies**:
    ```bash
@@ -28,14 +37,71 @@ A modern, high-performance 3D developer portfolio built with React, Three.js, an
    npm run build
    ```
 
-## Features
-- **Smooth 3D Scroll**: Camera and objects move in sync with page scroll.
-- **Modern Dark UI**: Sleek glassmorphism design with a professional color palette.
-- **Responsive**: Mobile-friendly layout with fallbacks.
-- **Performance Optimized**: Low-poly geometries and efficient rendering.
+## 📁 Project Structure
+```
+src/
+├── components/
+│   ├── 3d/              # 3D components
+│   │   ├── Experience.jsx
+│   │   └── GamingCharacter.jsx
+│   ├── animations/      # Animation components
+│   │   └── CinematicIntro.jsx
+│   ├── ui/              # UI components
+│   │   └── DesktopUI.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Hero.jsx
+│   ├── Projects.jsx
+│   └── Skills.jsx
+├── styles/
+│   └── index.css
+├── utils/
+│   └── main.jsx
+├── App.jsx
+└── main.jsx
+```
 
-## Project Structure
-- `src/components/Experience.jsx`: Main 3D scene logic.
-- `src/components/Overlay.jsx`: Wrapper for HTML sections.
-- `src/components/Hero.jsx`, `About.jsx`, etc.: Individual sections.
-- `src/App.jsx`: Canvas configuration and scroll controls.
+## 🎨 Design Elements
+- **Color Palette**: Cyberpunk neon colors (#ff006e, #8338ec, #3a86ff)
+- **Typography**: Orbitron monospace font for cyberpunk feel
+- **Animations**: Spring physics, glitch effects, neon pulses
+- **3D Elements**: Monitor, gaming character, tech orbs, holographic panels
+- **Interactive Features**: Hover states, micro-interactions, particle effects
+
+## 🌐 Deployment
+
+This portfolio is deployed and available at:
+- **GitHub**: https://github.com/SapotaDA/port
+- **Live Site**: Deployed via your preferred hosting platform
+
+## 🎯 Key Components
+
+### CinematicIntro.jsx
+- 4.5-second animated opening sequence
+- Clickable initialize button
+- Particle effects and animations
+- Cyberpunk branding and effects
+
+### GamingCharacter.jsx
+- 3D cyberpunk avatar with armor
+- Floating and breathing animations
+- Energy core with particle trails
+- Positioned in 3D scene
+
+### Experience.jsx
+- Main 3D scene with monitor
+- Dynamic camera movement
+- Mouse-responsive controls
+- Multiple 3D elements and effects
+
+### DesktopUI.jsx
+- Interactive desktop interface
+- Animated windows and navigation
+- Cyberpunk styling and effects
+- Spring physics animations
+
+## 🔧 Customization
+- Modify colors in `src/styles/index.css`
+- Update 3D elements in `src/components/3d/`
+- Customize animations in `src/components/animations/`
+- Adjust UI components in `src/components/ui/`

@@ -2,7 +2,7 @@ import { useScroll, Float, ContactShadows, Environment, PresentationControls, Ht
 import { useFrame } from "@react-three/fiber";
 import { useRef, useMemo, useState, useEffect } from "react";
 import * as THREE from "three";
-import { DesktopUI } from "./DesktopUI";
+import { DesktopUI } from "../ui/DesktopUI";
 import GamingCharacter from "./GamingCharacter";
 
 const Monitor = ({ ...props }) => {
