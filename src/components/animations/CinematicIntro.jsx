@@ -10,19 +10,19 @@ const CinematicIntro = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentPhase(1);
-    }, 1000);
+    }, 500);
 
     const timer2 = setTimeout(() => {
       setCurrentPhase(2);
-    }, 2500);
+    }, 1200);
 
     const timer3 = setTimeout(() => {
       setCurrentPhase(3);
-    }, 3500);
+    }, 1800);
 
     const timer4 = setTimeout(() => {
       setCanProceed(true);
-    }, 4500);
+    }, 2500);
 
     return () => {
       clearTimeout(timer);
