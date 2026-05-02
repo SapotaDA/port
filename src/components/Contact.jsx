@@ -14,14 +14,14 @@ export const Contact = () => {
   };
 
   const contactMethods = [
-    { icon: Mail, label: "Email", value: "your.email@example.com", href: "mailto:your.email@example.com" },
-    { icon: Github, label: "GitHub", value: "github.com/yourprofile", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/yourprofile", href: "#" },
+    { icon: Mail, label: "Email", value: "aaravuniyal1@gmail.com", href: "mailto:aaravuniyal1@gmail.com" },
+    { icon: Github, label: "GitHub", value: "github.com/SapotaDA", href: "https://github.com/SapotaDA" },
+    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/aarav-uniyal-24943222a", href: "https://www.linkedin.com/in/aarav-uniyal-24943222a/" },
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/SapotaDA", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/aarav-uniyal-24943222a/", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
