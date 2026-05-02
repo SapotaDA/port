@@ -3,6 +3,14 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 const projects = [
   {
+    title: "TaskFlow - Task Management System",
+    description: "Modern task management application with user authentication, project tracking, and team collaboration features. Built with React and Node.js for seamless workflow management and productivity enhancement.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS"],
+    github: "https://github.com/SapotaDA/TaskFlow",
+    link: "https://taskiflow.vercel.app/login",
+    color: "from-green-500/20 to-green-500/5",
+  },
+  {
     title: "E-Commerce Platform",
     description: "Full-featured MERN e-commerce solution with real-time inventory management, secure payment processing via Stripe, and comprehensive admin dashboard. Optimized for performance with 95+ Lighthouse score.",
     tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
