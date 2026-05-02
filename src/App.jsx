@@ -1,17 +1,37 @@
 import { Canvas } from "@react-three/fiber";
 import { ScrollControls, Loader } from "@react-three/drei";
 import { Experience } from "./components/Experience";
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { motion } from 'framer-motion';
+import CinematicIntro from "./components/CinematicIntro";
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+  const [showMainContent, setShowMainContent] = useState(false);
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+    setShowMainContent(true);
+  };
+
   return (
-    <div className="min-h-screen w-screen bg-[#0a0a0f] noise relative overflow-hidden">
+    <>
+      {/* Cinematic Intro */}
+      <CinematicIntro onComplete={handleIntroComplete} />
+      
+      {/* Main App Content */}
+      {showMainContent && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="min-h-screen w-screen bg-[#0a0a0f] noise relative overflow-hidden"
+        >
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-black/90 backdrop-blur-lg border-b border-purple-500/20 z-50 flex items-center px-4 md:px-8">
         <div className="flex items-center gap-2">
@@ -85,7 +105,9 @@ function App() {
       {/* Ambient Effects - Cyberpunk */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://res.cloudinary.com/dzv9rq7qr/image/upload/v1682332841/noise_ovl7uz.png')]"></div>
       <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-500/5 via-pink-500/3 to-transparent"></div>
-    </div>
+        </motion.div>
+      )}
+    </>
   );
 }
 

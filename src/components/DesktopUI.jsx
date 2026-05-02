@@ -28,20 +28,20 @@ const Window = ({ title, children, onClose, isOpen, icon: Icon }) => {
                     animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, rotate: 5, y: -50 }}
                     transition={{ type: "spring", damping: 15, stiffness: 300 }}
-                    className="absolute top-12 left-12 right-12 bottom-12 bg-black/95 backdrop-blur-2xl rounded-2xl border border-sky-500/20 shadow-[0_0_50px_rgba(56,189,248,0.3)] flex flex-col overflow-hidden z-50"
+                    className="absolute top-12 left-12 right-12 bottom-12 bg-black/95 backdrop-blur-2xl rounded-2xl border border-purple-500/20 shadow-[0_0_50px_rgba(255,0,110,0.4)] flex flex-col overflow-hidden z-50"
                     style={{
-                        boxShadow: '0 0 50px rgba(56, 189, 248, 0.3), inset 0 0 20px rgba(56, 189, 248, 0.1)'
+                        boxShadow: '0 0 50px rgba(255, 0, 110, 0.4), inset 0 0 20px rgba(131, 56, 236, 0.2)'
                     }}
                 >
-                    <div className="bg-black/30 px-6 py-4 flex justify-between items-center border-b border-sky-500/10">
+                    <div className="bg-black/30 px-6 py-4 flex justify-between items-center border-b border-purple-500/10">
                         <div className="flex items-center gap-3">
                             <motion.div
                                 animate={{ rotate: [0, 360] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                             >
-                                {Icon && <Icon size={16} className="text-sky-400" />}
+                                {Icon && <Icon size={16} className="text-pink-400" />}
                             </motion.div>
-                            <span className="text-xs font-mono font-bold tracking-widest text-sky-400 uppercase animate-pulse">{title}</span>
+                            <span className="text-xs font-mono font-bold tracking-widest text-pink-400 uppercase animate-pulse glitch">{title}</span>
                         </div>
                         <motion.button 
                             onClick={onClose} 
@@ -49,11 +49,11 @@ const Window = ({ title, children, onClose, isOpen, icon: Icon }) => {
                             whileHover={{ rotate: 90 }}
                             whileTap={{ scale: 0.9 }}
                         >
-                            <X size={18} className="text-slate-400" />
+                            <X size={18} className="text-purple-300" />
                         </motion.button>
                     </div>
                     <motion.div 
-                        className="flex-grow overflow-y-auto p-8 text-slate-300 custom-scrollbar"
+                        className="flex-grow overflow-y-auto p-8 text-purple-200 custom-scrollbar"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
@@ -191,10 +191,10 @@ export const DesktopUI = () => {
                         transition={{ delay: index * 0.1 }}
                     >
                         <motion.div 
-                            className={`p-3 rounded-xl bg-black/30 border border-white/5 backdrop-blur-md group-hover:border-sky-500/50 transition-all ${item.color}`}
+                            className={`p-3 rounded-xl bg-black/30 border border-white/5 backdrop-blur-md group-hover:border-pink-500/50 transition-all ${item.color}`}
                             whileHover={{ 
-                                boxShadow: '0 0 20px rgba(56, 189, 248, 0.5)',
-                                borderColor: 'rgba(56, 189, 248, 0.8)'
+                                boxShadow: '0 0 20px rgba(255, 0, 110, 0.5)',
+                                borderColor: 'rgba(255, 0, 110, 0.8)'
                             }}
                         >
                             <motion.div
@@ -213,7 +213,7 @@ export const DesktopUI = () => {
                         {activeWindow === item.id && (
                             <motion.div 
                                 layoutId="active-indicator" 
-                                className="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-4 bg-sky-500 rounded-full shadow-[0_0_10px_rgba(56,189,248,1)]" 
+                                className="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-4 bg-pink-500 rounded-full shadow-[0_0_10px_rgba(255,0,110,1)]" 
                                 animate={{ scale: [1, 1.5, 1] }}
                                 transition={{ duration: 0.5, repeat: Infinity }}
                             />
@@ -222,15 +222,16 @@ export const DesktopUI = () => {
                 ))}
             </div>
 
-            {/* Main Content Area / Desktop Icons */}
+            {/* Main Content Area / Desktop Icons - Cyberpunk */}
             <div className="absolute right-12 top-12 bottom-12 left-24 grid grid-cols-4 gap-8 pointer-events-none opacity-10">
                 {[...Array(12)].map((_, i) => (
                     <motion.div 
                         key={i} 
-                        className="border border-sky-500/5 rounded-lg"
+                        className="border border-pink-500/10 rounded-lg"
                         animate={{ 
                             scale: [1, 1.1, 1],
-                            opacity: [0.1, 0.2, 0.1]
+                            opacity: [0.1, 0.3, 0.1],
+                            borderColor: ['#ff006e20', '#8338ec20', '#3a86ff20', '#ff006e20']
                         }}
                         transition={{ 
                             duration: 2 + Math.random() * 2,
@@ -396,9 +397,9 @@ export const DesktopUI = () => {
                 </div>
             </Window>
 
-            {/* Bottom Dock */}
+            {/* Bottom Dock - Cyberpunk Enhanced */}
             <motion.div 
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 px-8 py-3 bg-black/90 backdrop-blur-2xl border border-sky-500/20 rounded-2xl flex items-center gap-8 shadow-2xl z-30"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 px-8 py-3 bg-black/90 backdrop-blur-2xl border border-purple-500/20 rounded-2xl flex items-center gap-8 shadow-2xl z-30 neon-border"
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1, duration: 0.8 }}
@@ -418,20 +419,20 @@ export const DesktopUI = () => {
                         transition={{ delay: 1.2 + index * 0.1 }}
                     >
                         <motion.div
-                            className="absolute inset-0 rounded-full bg-sky-500/20 blur-xl"
+                            className="absolute inset-0 rounded-full bg-pink-500/20 blur-xl"
                             animate={{ scale: [1, 1.5, 1] }}
                             transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
                         />
                         <social.icon 
                             size={20} 
-                            className="text-slate-400 hover:text-white transition-colors relative z-10" 
+                            className="text-purple-400 hover:text-pink-500 transition-colors relative z-10" 
                         />
                     </motion.button>
                 ))}
             </motion.div>
 
-            {/* Scanline Effect */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] animate-scanline" />
+            {/* Scanline Effect - Cyberpunk */}
+            <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[linear-gradient(rgba(255,0,110,0.3)_50%,rgba(131,56,236,0.25)_50%),linear-gradient(90deg,rgba(58,134,255,0.06),rgba(255,0,110,0.02),rgba(131,56,236,0.06))] bg-[size:100%_4px,3px_100%] animate-scanline" />
         </div>
     );
 };

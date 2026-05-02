@@ -208,16 +208,47 @@ canvas {
       linear-gradient(90deg, rgba(131, 56, 236, 0.1) 1px, transparent 1px);
   }
 
-  @keyframes glitch {
-    0%, 100% { text-shadow: 2px 0 #ff006e, -2px 0 #3a86ff; }
-    25% { text-shadow: -2px 0 #ff006e, 2px 0 #8338ec; }
-    50% { text-shadow: 2px 0 #3a86ff, -2px 0 #ff006e; }
-    75% { text-shadow: -2px 0 #8338ec, 2px 0 #3a86ff; }
+/* Enhanced Cyberpunk Theme */
+@keyframes neon-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(255, 0, 110, 0.8), 
+                0 0 40px rgba(255, 0, 110, 0.6),
+                inset 0 0 20px rgba(131, 56, 236, 0.3);
   }
+  50% { 
+    box-shadow: 0 0 30px rgba(255, 0, 110, 1), 
+                0 0 60px rgba(255, 0, 110, 0.8),
+                inset 0 0 30px rgba(131, 56, 236, 0.5);
+  }
+}
 
-  .glitch {
-    animation: glitch 2s infinite;
-  }
+@keyframes hologram-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  75% { opacity: 0.9; }
+}
+
+@keyframes data-stream {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.neon-border {
+  animation: neon-pulse 2s infinite;
+}
+
+.hologram {
+  animation: hologram-flicker 3s infinite;
+}
+
+.data-stream {
+  position: fixed;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #ff006e, transparent);
+  animation: data-stream 3s linear infinite;
+  pointer-events: none;
+}
 
   .btn-primary {
     @apply px-6 py-3 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-400 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] active:scale-95;
