@@ -8,6 +8,15 @@ export default defineConfig({
     port: 5173,
     open: true,
     strictPort: false,
+    host: true,
+    hmr: {
+      overlay: true,
+      port: 5173,
+    },
+    watch: {
+      usePolling: true,
+      interval: 1000,
+    },
   },
   build: {
     target: 'esnext',
