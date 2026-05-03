@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -8,7 +8,6 @@ const projects = [
     tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
     github: "#",
     link: "#",
-    color: "from-blue-500/20 to-blue-500/5",
   },
   {
     title: "AI-Powered Image Generator",
@@ -16,7 +15,6 @@ const projects = [
     tech: ["React", "Express", "OpenAI API", "Cloudinary", "Material-UI"],
     github: "#",
     link: "#",
-    color: "from-cyan-500/20 to-cyan-500/5",
   },
   {
     title: "3D Interactive Portfolio",
@@ -24,66 +22,67 @@ const projects = [
     tech: ["React Three Fiber", "Three.js", "Framer Motion", "WebGL"],
     github: "#",
     link: "#",
-    color: "from-orange-500/20 to-orange-500/5",
   },
 ];
 
 export const Projects = () => {
   return (
-    <section className="w-screen flex flex-col justify-center max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20" id="projects">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="mb-16"
-      >
-        <h2 className="text-5xl md:text-6xl font-bold mb-4">
-          Featured <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
-        </h2>
-        <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-transparent rounded-full"></div>
-        <p className="text-slate-400 mt-6 text-lg">Showcasing my recent work and technical expertise</p>
-      </motion.div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15 }}
-            whileHover={{ y: -8, scale: 1.01 }}
-            className={`group relative overflow-hidden rounded-[2rem] border border-blue-500/10 bg-gradient-to-br ${project.color} backdrop-blur-sm p-8 flex flex-col h-full hover:border-blue-500/30 transition-all duration-300 shadow-[0_20px_80px_rgba(0,0,0,0.5)]`}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-[2rem] transition-opacity duration-300"></div>
-            <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-white/5 blur-3xl opacity-40" />
-            
-            <div className="relative z-10 flex flex-col h-full">
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">{project.title}</h3>
-              <p className="text-slate-300 mb-6 text-base leading-relaxed flex-grow opacity-90">
-                {project.description}
-              </p>
+    <section id="projects" className="py-20 px-6 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects</h2>
+          <p className="text-xl text-gray-600">Here are a few of my projects.</p>
+        </motion.div>
+        
+        <div className="space-y-12">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-lg shadow-sm border border-gray-200"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{project.title}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
               
-              <div className="flex flex-wrap gap-2 mb-8">
-                {project.tech.map((t, i) => (
-                  <span key={i} className="text-xs px-3 py-1 rounded-full bg-black/20 text-slate-200 border border-blue-500/10 font-medium backdrop-blur-sm">
-                    {t}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                  >
+                    {tech}
                   </span>
                 ))}
               </div>
               
-              <div className="flex gap-3 pt-4 border-t border-blue-500/10">
-                <a href={project.github} className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors group/link">
+              <div className="flex gap-4">
+                <a
+                  href={project.github}
+                  className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                >
                   <Github size={18} />
-                  <span className="text-sm font-medium">Code</span>
+                  <span>Code</span>
                 </a>
-                <a href={project.link} className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors group/link ml-auto">
-                  <span className="text-sm font-medium">Live</span>
-                  <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
+                <a
+                  href={project.link}
+                  className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  <ExternalLink size={18} />
+                  <span>Live Demo</span>
                 </a>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
