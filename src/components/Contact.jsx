@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Send, Github, Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -15,33 +14,32 @@ export const Contact = () => {
     setError("");
 
     try {
-      // EmailJS configuration with working service
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: "aaravuniyal3@gmail.com",
-        reply_to: formData.email
-      };
+      // Formspree integration for automatic email sending
+      const formDataObj = new FormData();
+      formDataObj.append('name', formData.name);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('message', formData.message);
+      formDataObj.append('_subject', `Portfolio Contact from ${formData.name}`);
+      formDataObj.append('_replyto', formData.email);
 
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        "service_2n8x7b8", // EmailJS service ID
-        "template_4m8j9k2", // EmailJS template ID
-        templateParams,
-        "-1Z2X3W4V5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9M0N" // EmailJS public key
-      );
+      const response = await fetch('https://formspree.io/f/xblrgvnl', {
+        method: 'POST',
+        body: formDataObj,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-      if (response.status === 200) {
+      if (response.ok) {
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        setError("Failed to send message. Please try again.");
+        throw new Error('Form submission failed');
       }
     } catch (err) {
-      console.error("EmailJS error:", err);
-      // Fallback to mailto if EmailJS fails
+      console.error("Form submission error:", err);
+      // Fallback to mailto if form submission fails
       const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
