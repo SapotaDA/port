@@ -4,14 +4,14 @@ import { ArrowDown, Sparkles, Zap } from "lucide-react";
 export const Hero = () => {
   return (
     <section className="min-h-screen w-screen flex flex-col items-center justify-center relative overflow-hidden py-12 md:py-0 bg-[#0a0a0f]">
-      {/* Animated Background Particles - Cyberpunk */}
+      {/* Animated Background Particles - Professional */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(40)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 rounded-full"
             style={{
-              background: i % 3 === 0 ? '#ff006e' : i % 3 === 1 ? '#8338ec' : '#3a86ff'
+              background: i % 3 === 0 ? '#3b82f6' : i % 3 === 1 ? '#8b5cf6' : '#06b6d4'
             }}
             initial={{ 
               x: Math.random() * window.innerWidth, 
@@ -44,13 +44,13 @@ export const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, type: "spring", damping: 15 }}
         >
-          <div className="inline-block mb-4 md:mb-6 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-purple-500/10 border border-pink-500/30">
+          <div className="inline-block mb-4 md:mb-6 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-blue-500/10 border border-blue-500/30">
             <motion.p 
-              className="text-xs md:text-sm font-mono text-pink-400 tracking-widest glitch"
+              className="text-xs md:text-sm font-mono text-blue-400 tracking-widest"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              WELCOME_TO_CYBER_SPACE
+              MERN_STACK_DEVELOPER
             </motion.p>
           </div>
         </motion.div>
@@ -63,7 +63,7 @@ export const Hero = () => {
         >
           WEB DEVELOPER & 
           <motion.span 
-            className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent"
             animate={{ 
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
@@ -74,25 +74,25 @@ export const Hero = () => {
               WebkitBackgroundClip: 'text'
             }}
           >
-            DIGITAL CREATOR
+            FULL_STACK_DEVELOPER
           </motion.span>
           <motion.div
             className="inline-block ml-2"
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
           >
-            <Sparkles size={24} className="text-pink-500" />
+            <Sparkles size={24} className="text-blue-500" />
           </motion.div>
         </motion.h1>
         
         <motion.p 
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-300 font-light mb-6 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-300 font-light mb-6 leading-relaxed"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
         >
-          I build modern web applications with cutting-edge technologies and immersive user experiences.
-          <span className="block text-sm md:text-base mt-3 text-purple-400">Specialized in React, Node.js, Three.js, and interactive web development.</span>
+          I build modern web applications with the MERN stack and cutting-edge web technologies.
+          <span className="block text-sm md:text-base mt-3 text-blue-400">Specialized in React, Node.js, MongoDB, and scalable web development.</span>
         </motion.p>
 
         <motion.div 
@@ -101,18 +101,18 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          {['WEB_APPS', 'INTERFACES', 'FULL_STACK', 'DIGITAL_EXPERIENCES'].map((item, index) => (
+          {['WEB_APPS', 'INTERFACES', 'MERN_STACK', 'SCALABLE_SOLUTIONS'].map((item, index) => (
             <motion.span 
               key={index} 
-              className="px-3 py-2 rounded-full bg-purple-500/20 border border-pink-500/30 text-purple-200 text-xs md:text-sm"
+              className="px-3 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-200 text-xs md:text-sm"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 + index * 0.1 }}
               whileHover={{ 
                 scale: 1.1, 
-                borderColor: 'rgba(255, 0, 110, 0.8)',
-                color: '#ff006e',
-                textShadow: '0 0 10px #ff006e'
+                borderColor: 'rgba(59, 130, 246, 0.8)',
+                color: '#3b82f6',
+                textShadow: '0 0 10px #3b82f6'
               }}
             >
               {item}

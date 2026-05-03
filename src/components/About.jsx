@@ -15,8 +15,8 @@ export const About = () => {
     },
     {
       icon: Globe,
-      title: "Interactive Experiences",
-      description: "Creating immersive 3D web experiences with Three.js and WebGL technologies"
+      title: "Web Applications",
+      description: "Building scalable web applications with modern frameworks and best practices"
     }
   ];
 
@@ -42,13 +42,13 @@ export const About = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-lg text-slate-300 leading-relaxed mb-6">
-              I'm a passionate web developer who loves creating modern, interactive applications. With expertise in React, Node.js, and Three.js, I specialize in building full-stack applications that deliver exceptional user experiences and push the boundaries of web development.
+              I'm a passionate MERN stack developer who loves creating modern, scalable web applications. With expertise in React, Node.js, and MongoDB, I specialize in building full-stack applications that deliver exceptional user experiences and follow industry best practices.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              My journey in web development is driven by curiosity and a desire to solve real-world problems through code. I believe in creating clean, maintainable applications that not only function perfectly but also delight users with innovative interfaces and smooth interactions.
+              My journey in web development is driven by a commitment to clean code and practical solutions. I believe in creating maintainable applications that not only function perfectly but also provide excellent user experiences through thoughtful design and efficient architecture.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-3">
-              {['React & Next.js', 'Node.js & Express', 'Three.js & WebGL', 'Database Design'].map((item, index) => (
+              {['React & Next.js', 'Node.js & Express', 'MongoDB & Mongoose', 'REST APIs'].map((item, index) => (
                 <span key={index} className="text-sm text-slate-300 bg-slate-950/70 border border-sky-500/10 rounded-2xl px-4 py-3">
                   {item}
                 </span>

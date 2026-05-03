@@ -35,7 +35,7 @@ function App() {
           <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-black/90 backdrop-blur-lg border-b border-purple-500/20 z-50 flex items-center px-4 md:px-8">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
-              <span className="text-sm md:text-base font-bold text-pink-500 glitch">AARAV.CYBER</span>
+              <span className="text-sm md:text-base font-bold text-blue-500">AARAV.DEV</span>
             </div>
             <div className="flex-1" />
             <div className="flex items-center gap-6">

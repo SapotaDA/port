@@ -47,7 +47,7 @@ const CinematicIntro = ({ onComplete }) => {
           transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
         >
-          {/* Cyberpunk Grid Background */}
+          {/* Professional Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,0,110,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(131,56,236,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
           
           {/* Animated Particles */}
@@ -134,7 +134,7 @@ const CinematicIntro = ({ onComplete }) => {
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                     >
-                      <Zap size={32} className="text-pink-500" />
+                      <Zap size={32} className="text-blue-500" />
                     </motion.div>
                     <motion.div
                       animate={{ rotate: [0, -360] }}
@@ -156,7 +156,7 @@ const CinematicIntro = ({ onComplete }) => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
                   >
-                    <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
                       AARAV
                     </span>
                   </motion.h1>
