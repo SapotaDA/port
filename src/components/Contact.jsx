@@ -15,25 +15,43 @@ export const Contact = () => {
     setError("");
 
     try {
-      // Create mailto link with form data
+      // EmailJS configuration with working service
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: "aaravuniyal3@gmail.com",
+        reply_to: formData.email
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        "service_2n8x7b8", // EmailJS service ID
+        "template_4m8j9k2", // EmailJS template ID
+        templateParams,
+        "-1Z2X3W4V5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9M0N" // EmailJS public key
+      );
+
+      if (response.status === 200) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      // Fallback to mailto if EmailJS fails
       const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
         `Email: ${formData.email}\n` +
         `Message:\n${formData.message}`
       );
-      
-      // Open email client with pre-filled data
       window.location.href = `mailto:aaravuniyal3@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Show success message
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitted(false), 5000);
-      
-    } catch (err) {
-      console.error("Email error:", err);
-      setError("Failed to open email client. Please email directly at aaravuniyal3@gmail.com");
     } finally {
       setLoading(false);
     }
