@@ -3,22 +3,6 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "TaskFlow - Task Management System",
-    description: "Modern task management application with user authentication, project tracking, and team collaboration features. Built with React and Node.js for seamless workflow management and productivity enhancement.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS"],
-    github: "https://github.com/SapotaDA/TaskFlow",
-    link: "https://taskiflow.vercel.app/login",
-    color: "from-green-500/20 to-green-500/5",
-  },
-  {
-    title: "AI Research Assistant - Chrome Extension",
-    description: "Production-ready Chrome Extension (Manifest V3) that provides AI-powered tools on any webpage. Features include text explanation, full page summarization, and RAG-lite chat functionality with OpenAI integration.",
-    tech: ["JavaScript", "Chrome Extension API", "OpenAI API", "Manifest V3", "HTML", "CSS"],
-    github: "https://github.com/SapotaDA/AI-EXT",
-    link: "#",
-    color: "from-purple-500/20 to-purple-500/5",
-  },
-  {
     title: "E-Commerce Platform",
     description: "Full-featured MERN e-commerce solution with real-time inventory management, secure payment processing via Stripe, and comprehensive admin dashboard. Optimized for performance with 95+ Lighthouse score.",
     tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
