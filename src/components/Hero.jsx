@@ -91,8 +91,8 @@ export const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
         >
-          I build modern web applications with the MERN stack and cutting-edge web technologies.
-          <span className="block text-sm md:text-base mt-3 text-blue-400">Specialized in React, Node.js, MongoDB, and scalable web development.</span>
+          I build modern web applications using the MERN stack and cutting-edge web technologies.
+          <span className="block text-sm md:text-base mt-3 text-blue-400">Specializing in React, Node.js, MongoDB, and scalable web development solutions.</span>
         </motion.p>
 
         <motion.div 
@@ -101,7 +101,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          {['WEB_APPS', 'INTERFACES', 'MERN_STACK', 'SCALABLE_SOLUTIONS'].map((item, index) => (
+          {['WEB_APPS', 'UI/UX', 'MERN_STACK', 'SCALABLE_SOLUTIONS'].map((item, index) => (
             <motion.span 
               key={index} 
               className="px-3 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-200 text-xs md:text-sm"

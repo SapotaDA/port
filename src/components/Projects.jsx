@@ -52,31 +52,31 @@ export const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.15 }}
             whileHover={{ y: -8, scale: 1.01 }}
-            className={`group relative overflow-hidden rounded-[2rem] border border-sky-500/10 bg-gradient-to-br ${project.color} backdrop-blur-sm p-8 flex flex-col h-full hover:border-sky-500/30 transition-all duration-300 shadow-[0_20px_80px_rgba(0,0,0,0.5)]`}
+            className={`group relative overflow-hidden rounded-[2rem] border border-blue-500/10 bg-gradient-to-br ${project.color} backdrop-blur-sm p-8 flex flex-col h-full hover:border-blue-500/30 transition-all duration-300 shadow-[0_20px_80px_rgba(0,0,0,0.5)]`}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-[2rem] transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-[2rem] transition-opacity duration-300"></div>
             <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-white/5 blur-3xl opacity-40" />
             
             <div className="relative z-10 flex flex-col h-full">
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-sky-300 transition-colors">{project.title}</h3>
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors">{project.title}</h3>
               <p className="text-slate-300 mb-6 text-base leading-relaxed flex-grow opacity-90">
                 {project.description}
               </p>
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tech.map((t, i) => (
-                  <span key={i} className="text-xs px-3 py-1 rounded-full bg-black/20 text-slate-200 border border-sky-500/10 font-medium backdrop-blur-sm">
+                  <span key={i} className="text-xs px-3 py-1 rounded-full bg-black/20 text-slate-200 border border-blue-500/10 font-medium backdrop-blur-sm">
                     {t}
                   </span>
                 ))}
               </div>
               
-              <div className="flex gap-3 pt-4 border-t border-sky-500/10">
-                <a href={project.github} className="inline-flex items-center gap-2 text-slate-200 hover:text-sky-300 transition-colors group/link">
+              <div className="flex gap-3 pt-4 border-t border-blue-500/10">
+                <a href={project.github} className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors group/link">
                   <Github size={18} />
                   <span className="text-sm font-medium">Code</span>
                 </a>
-                <a href={project.link} className="inline-flex items-center gap-2 text-slate-200 hover:text-sky-300 transition-colors group/link ml-auto">
+                <a href={project.link} className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors group/link ml-auto">
                   <span className="text-sm font-medium">Live</span>
                   <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
                 </a>

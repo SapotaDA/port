@@ -100,19 +100,19 @@ export const Services = () => {
                 whileHover={{ y: -8 }}
                 className={`relative p-6 rounded-[2rem] border transition-all duration-300 ${
                   service.popular 
-                    ? 'border-pink-500/30 bg-gradient-to-br from-pink-500/10 to-transparent' 
-                    : 'border-sky-500/10 bg-black/90 hover:border-sky-500/30'
+                    ? 'border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-transparent' 
+                    : 'border-blue-500/10 bg-black/90 hover:border-blue-500/30'
                 }`}
               >
                 {service.popular && (
-                  <div className="absolute -top-3 -right-3 px-3 py-1 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-bold rounded-full">
+                  <div className="absolute -top-3 -right-3 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold rounded-full">
                     POPULAR
                   </div>
                 )}
                 
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-3 rounded-lg ${service.popular ? 'bg-pink-500/20' : 'bg-sky-500/10'}`}>
-                    <Icon className={service.popular ? 'text-pink-400' : 'text-sky-400'} size={24} />
+                  <div className={`p-3 rounded-lg ${service.popular ? 'bg-blue-500/20' : 'bg-blue-500/10'}`}>
+                    <Icon className={service.popular ? 'text-blue-400' : 'text-blue-400'} size={24} />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white">{service.title}</h3>
@@ -124,7 +124,7 @@ export const Services = () => {
                 <div className="space-y-2 mb-4">
                   {service.features.map((feature, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-slate-400">
-                      <CheckCircle size={14} className={service.popular ? 'text-pink-400' : 'text-sky-400'} />
+                      <CheckCircle size={14} className={service.popular ? 'text-blue-400' : 'text-blue-400'} />
                       {feature}
                     </div>
                   ))}

@@ -32,9 +32,9 @@ function App() {
           className="min-h-screen w-screen bg-[#0a0a0f] noise relative overflow-hidden"
         >
           {/* Navigation */}
-          <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-black/90 backdrop-blur-lg border-b border-purple-500/20 z-50 flex items-center px-4 md:px-8">
+          <nav className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-black/90 backdrop-blur-lg border-b border-blue-500/20 z-50 flex items-center px-4 md:px-8">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               <span className="text-sm md:text-base font-bold text-blue-500">AARAV.DEV</span>
             </div>
             <div className="flex-1" />
@@ -43,8 +43,8 @@ function App() {
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-xs md:text-sm font-mono text-purple-400 hover:text-pink-500 transition-colors"
-                  whileHover={{ scale: 1.1, textShadow: '0 0 10px #ff006e' }}
+                  className="text-xs md:text-sm font-mono text-blue-400 hover:text-blue-300 transition-colors"
+                  whileHover={{ scale: 1.1, textShadow: '0 0 10px #3b82f6' }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}

@@ -115,13 +115,13 @@ export const Contact = () => {
           <p className="text-slate-400 text-base md:text-lg">Let's build something unforgettable together.</p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {['Launch-ready products', 'Interactive dashboards', 'Brand experiences', 'High-performance apps'].map((item, index) => (
-              <span key={index} className="text-xs md:text-sm px-3 py-1 rounded-full bg-black/30 border border-sky-500/10 text-slate-300">
+              <span key={index} className="text-xs md:text-sm px-3 py-1 rounded-full bg-black/30 border border-blue-500/10 text-slate-300">
                 {item}
               </span>
             ))}
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 p-6 md:p-10 rounded-[2rem] bg-gradient-to-br from-sky-500/3 to-blue-500/3 border border-sky-500/15 backdrop-blur-sm w-full shadow-[0_40px_90px_rgba(0,0,0,0.6)]">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 p-6 md:p-10 rounded-[2rem] bg-gradient-to-br from-blue-500/3 to-blue-500/3 border border-blue-500/15 backdrop-blur-sm w-full shadow-[0_40px_90px_rgba(0,0,0,0.6)]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div className="space-y-2">
               <label className="text-sm text-slate-300 font-medium ml-1">Full Name *</label>
@@ -131,7 +131,7 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-black/30 border border-sky-500/15 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-black/40 transition-all text-sm md:text-base"
+                className="w-full bg-black/30 border border-blue-500/15 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:bg-black/40 transition-all text-sm md:text-base"
               />
             </div>
             <div className="space-y-2">
@@ -142,7 +142,7 @@ export const Contact = () => {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-black/30 border border-sky-500/15 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-black/40 transition-all text-sm md:text-base"
+                className="w-full bg-black/30 border border-blue-500/15 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:bg-black/40 transition-all text-sm md:text-base"
               />
             </div>
           </div>
@@ -154,7 +154,7 @@ export const Contact = () => {
               required
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full bg-white/5 border border-sky-500/20 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-sky-500 focus:bg-white/10 transition-all resize-none text-sm md:text-base"
+              className="w-full bg-white/5 border border-blue-500/20 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:bg-white/10 transition-all resize-none text-sm md:text-base"
             />
           </div>
 
