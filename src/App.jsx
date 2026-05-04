@@ -50,7 +50,7 @@ function App() {
         </nav>
 
         {/* Main Content */}
-        <main>
+        <main className="pt-20">
           <Hero />
           <About />
           <Projects />
