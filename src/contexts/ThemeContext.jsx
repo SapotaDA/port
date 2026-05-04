@@ -21,10 +21,7 @@ export const ThemeProvider = ({ children }) => {
   }, [isBright]);
 
   useEffect(() => {
-    // Apply theme to document element
-    document.documentElement.setAttribute('data-theme', isBright ? 'light' : 'dark');
-    
-    // Set CSS variables
+    // Apply theme to document element only once
     const root = document.documentElement;
     if (isBright) {
       root.style.setProperty('--bg-color', '#ffffff');

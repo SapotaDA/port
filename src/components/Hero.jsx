@@ -6,36 +6,7 @@ export const Hero = () => {
   const { colors } = useTheme();
   
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden" style={{ backgroundColor: colors.background }}>
-      {/* Animated background particles - reduced to prevent flickering */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full"
-            style={{
-              backgroundColor: colors.accentSecondary,
-              opacity: 0.1
-            }}
-            initial={{ 
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000), 
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-              opacity: 0 
-            }}
-            animate={{ 
-              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
-              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
-              opacity: [0, 0.1, 0]
-            }}
-            transition={{ 
-              duration: 20 + Math.random() * 30,
-              repeat: Infinity,
-              delay: Math.random() * 10,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
+    <section className="min-h-screen flex items-center justify-center px-6 pt-20" style={{ backgroundColor: colors.background }}>
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div

@@ -14,17 +14,6 @@
   --accent-secondary: #666666;
 }
 
-[data-theme="dark"] {
-  --bg-color: #000000;
-  --text-color: #ffffff;
-  --text-secondary-color: #999999;
-  --border-color: #333333;
-  --card-bg: #1a1a1a;
-  --nav-bg: rgba(0, 0, 0, 0.8);
-  --accent-color: #ffffff;
-  --accent-secondary: #cccccc;
-}
-
 /* Custom styles for black and white portfolio design */
 html {
   scroll-behavior: smooth;
@@ -38,7 +27,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: none;
 }
 
 /* Custom animations */

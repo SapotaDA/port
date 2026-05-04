@@ -11,7 +11,7 @@ import "./styles/index.css";
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
+      <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: 'var(--nav-bg)', borderBottomColor: 'var(--border-color)' }}>
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -19,7 +19,7 @@ function App() {
               Aarav Uniyal
             </a>
             <div className="flex items-center space-x-8">
-              <a href="#about" className="transition-colors relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#about" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 About
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -28,7 +28,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#projects" className="transition-colors relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#projects" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 Projects
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -37,7 +37,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#game" className="transition-colors relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#game" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 Game
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -46,7 +46,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#contact" className="transition-colors relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#contact" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 Contact
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
