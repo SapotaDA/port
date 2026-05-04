@@ -2,7 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for engaging portfolio design */
+/* CSS Variables for Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --text-secondary-color: #666666;
+  --border-color: #e5e5e5;
+  --card-bg: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --accent-color: #000000;
+  --accent-secondary: #666666;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --text-secondary-color: #999999;
+  --border-color: #333333;
+  --card-bg: #1a1a1a;
+  --nav-bg: rgba(0, 0, 0, 0.8);
+  --accent-color: #ffffff;
+  --accent-secondary: #cccccc;
+}
+
+/* Custom styles for black and white portfolio design */
 html {
   scroll-behavior: smooth;
 }
@@ -13,6 +36,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom animations */

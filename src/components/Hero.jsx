@@ -1,29 +1,36 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mouse } from "lucide-react";
+import { useTheme } from '../contexts/ThemeContext';
 
 export const Hero = () => {
+  const { colors } = useTheme();
+  
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
-      {/* Animated background particles */}
+    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden" style={{ backgroundColor: colors.background }}>
+      {/* Animated background particles - reduced to prevent flickering */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-blue-500/20 rounded-full"
+            className="absolute w-1 h-1 rounded-full"
+            style={{
+              backgroundColor: colors.accentSecondary,
+              opacity: 0.1
+            }}
             initial={{ 
-              x: Math.random() * window.innerWidth, 
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000), 
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
               opacity: 0 
             }}
             animate={{ 
-              x: [null, Math.random() * window.innerWidth],
-              y: [null, Math.random() * window.innerHeight],
-              opacity: [0, 0.6, 0]
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+              opacity: [0, 0.1, 0]
             }}
             transition={{ 
-              duration: 10 + Math.random() * 20,
+              duration: 20 + Math.random() * 30,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: Math.random() * 10,
               ease: "easeInOut"
             }}
           />
@@ -37,7 +44,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6"
+            style={{ color: colors.text }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -50,7 +58,16 @@ export const Hero = () => {
               Hi, I'm{" "}
             </motion.span>
             <motion.span 
-              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              className="inline-block"
+              style={{ 
+                background: colors.text === '#000000' 
+                  ? 'linear-gradient(to right, #000000, #666666)'
+                  : 'linear-gradient(to right, #ffffff, #cccccc)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                color: 'transparent'
+              }}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -59,23 +76,26 @@ export const Hero = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl mb-8 leading-relaxed"
+            style={{ color: colors.textSecondary }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             I am a passionate{" "}
             <motion.span 
-              className="inline-block text-blue-600 font-semibold"
-              whileHover={{ scale: 1.1, color: "#2563eb" }}
+              className="inline-block font-semibold"
+              style={{ color: colors.text }}
+              whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               {" "}MERN stack{" "}
             </motion.span>
             {" "}developer who loves creating{" "}
             <motion.span 
-              className="inline-block text-purple-600 font-semibold"
-              whileHover={{ scale: 1.1, color: "#9333ea" }}
+              className="inline-block font-semibold"
+              style={{ color: colors.text }}
+              whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               {" "}modern, scalable{" "}
@@ -86,7 +106,11 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <motion.a
               href="#projects"
-              className="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all relative overflow-hidden group"
+              className="px-8 py-3 rounded-lg transition-all relative overflow-hidden group"
+              style={{ 
+                backgroundColor: colors.accent, 
+                color: colors.background
+              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -95,7 +119,8 @@ export const Hero = () => {
             >
               <span className="relative z-10">View my work</span>
               <motion.div 
-                className="absolute inset-0 bg-blue-600"
+                className="absolute inset-0"
+                style={{ backgroundColor: colors.accentSecondary }}
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -103,7 +128,11 @@ export const Hero = () => {
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all relative overflow-hidden group"
+              className="px-8 py-3 rounded-lg transition-all relative overflow-hidden group"
+              style={{ 
+                border: `1px solid ${colors.border}`,
+                color: colors.textSecondary
+              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -112,7 +141,8 @@ export const Hero = () => {
             >
               <span className="relative z-10">Get in touch</span>
               <motion.div 
-                className="absolute inset-0 bg-gray-100"
+                className="absolute inset-0"
+                style={{ backgroundColor: colors.cardBg }}
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -129,7 +159,8 @@ export const Hero = () => {
         >
           <motion.a 
             href="#about" 
-            className="inline-flex items-center text-gray-400 hover:text-gray-600 transition-colors group"
+            className="inline-flex items-center transition-colors group"
+            style={{ color: colors.textSecondary }}
             whileHover={{ y: -2 }}
           >
             <Mouse size={16} className="mr-2 group-hover:animate-bounce" />

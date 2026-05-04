@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Star, Heart, Eye } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from '../contexts/ThemeContext';
 
 const projects = [
   {
@@ -33,6 +34,7 @@ const projects = [
 ];
 
 export const Projects = () => {
+  const { colors } = useTheme();
   const [likedProjects, setLikedProjects] = useState(new Set());
   const [hoveredProject, setHoveredProject] = useState(null);
 
@@ -49,7 +51,7 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50 relative overflow-hidden">
+    <section id="projects" className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: colors.background }}>
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(15)].map((_, i) => (
