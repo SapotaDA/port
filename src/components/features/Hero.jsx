@@ -17,13 +17,13 @@ export const Hero = () => {
         >
           Hi, I'm{" "}
           <span style={{ 
-            background: colors.text === '#000000' 
-              ? 'linear-gradient(to right, #000000, #666666)'
-              : 'linear-gradient(to right, #ffffff, #cccccc)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            color: 'transparent'
+            color: 'transparent',
+            background: colors.text === '#000000' 
+              ? 'linear-gradient(to right, #000000, #666666)'
+              : 'linear-gradient(to right, #ffffff, #cccccc)'
           }}>
             Aarav Uniyal
           </span>

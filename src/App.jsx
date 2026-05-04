@@ -1,7 +1,6 @@
 import { Hero } from "./components/features/Hero";
 import { About } from "./components/features/About";
 import { Projects } from "./components/features/Projects";
-import { MiniGame } from "./components/game/MiniGame";
 import { Contact } from "./components/contact/Contact";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ThemeToggle } from "./components/common/ThemeToggle";
@@ -37,15 +36,6 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#game" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
-                Game
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                />
-              </a>
               <a href="#contact" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 Contact
                 <motion.div 
@@ -64,7 +54,6 @@ function App() {
           <Hero />
           <About />
           <Projects />
-          <MiniGame />
           <Contact />
         </main>
         
