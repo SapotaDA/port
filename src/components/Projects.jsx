@@ -51,32 +51,7 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: colors.background }}>
-      {/* Animated background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full"
-            initial={{ 
-              x: Math.random() * window.innerWidth, 
-              y: Math.random() * window.innerHeight,
-              opacity: 0 
-            }}
-            animate={{ 
-              x: [null, Math.random() * window.innerWidth],
-              y: [null, Math.random() * window.innerHeight],
-              opacity: [0, 0.3, 0]
-            }}
-            transition={{ 
-              duration: 15 + Math.random() * 25,
-              repeat: Infinity,
-              delay: Math.random() * 10,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
+    <section id="projects" className="py-20 px-6" style={{ backgroundColor: colors.background }}>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -86,8 +61,8 @@ export const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects</h2>
-          <p className="text-xl text-gray-600">Here are a few of my projects.</p>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Projects</h2>
+          <p className="text-xl mb-4" style={{ color: colors.textSecondary }}>Here are a few of my projects.</p>
         </motion.div>
         
         <div className="space-y-12">
@@ -98,29 +73,24 @@ export const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
-              onMouseEnter={() => setHoveredProject(index)}
-              onMouseLeave={() => setHoveredProject(null)}
-              whileHover={{ y: -5 }}
+              className="px-8 py-3 rounded-lg shadow-sm border relative overflow-hidden group"
+              style={{ 
+                backgroundColor: colors.cardBg,
+                borderColor: colors.border
+              }}
             >
-              {/* Hover effect overlay */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={false}
-                animate={hoveredProject === index ? { opacity: 1 } : { opacity: 0 }}
-              />
-              
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>{project.title}</h3>
+                  <div className="flex items-center gap-2 text-sm" style={{ color: colors.textSecondary }}>
                     <div className="flex items-center gap-1">
                       <Eye size={14} />
                       <span>{project.views}</span>
                     </div>
                     <motion.button
                       onClick={() => toggleLike(index)}
-                      className="flex items-center gap-1 hover:text-red-500 transition-colors"
+                      className="flex items-center gap-1"
+                      style={{ color: colors.textSecondary }}
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -133,71 +103,43 @@ export const Projects = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+                <p className="leading-relaxed" style={{ color: colors.textSecondary }}>{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, techIndex) => (
-                    <motion.span
+                    <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-blue-100 hover:text-blue-700 transition-colors cursor-pointer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      className="px-3 py-1 rounded-full text-sm"
+                      style={{ 
+                        backgroundColor: colors.cardBg,
+                        color: colors.textSecondary,
+                        border: `1px solid ${colors.border}`
+                      }}
                     >
                       {tech}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
                 
                 <div className="flex gap-4">
                   <motion.a
                     href={project.github}
-                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors group"
-                    whileHover={{ x: 5 }}
+                    className="inline-flex items-center gap-2"
+                    style={{ color: colors.textSecondary }}
                   >
-                    <Github size={18} className="group-hover:rotate-12 transition-transform" />
+                    <Github size={18} />
                     <span>Code</span>
                   </motion.a>
                   <motion.a
                     href={project.link}
-                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors group"
-                    whileHover={{ x: 5 }}
+                    className="inline-flex items-center gap-2"
+                    style={{ color: colors.textSecondary }}
                   >
-                    <ExternalLink size={18} className="group-hover:rotate-12 transition-transform" />
+                    <ExternalLink size={18} />
                     <span>Live Demo</span>
                   </motion.a>
                 </div>
               </div>
-              
-              {/* Floating elements on hover */}
-              <AnimatePresence>
-                {hoveredProject === index && (
-                  <>
-                    <motion.div
-                      className="absolute top-4 right-4 w-8 h-8 bg-blue-500/20 rounded-full"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      transition={{ delay: 0.1 }}
-                    >
-                      <Star className="w-4 h-4 text-blue-500 m-auto" />
-                    </motion.div>
-                    <motion.div
-                      className="absolute bottom-4 left-4 w-6 h-6 bg-purple-500/20 rounded-full"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      transition={{ delay: 0.2 }}
-                    />
-                    <motion.div
-                      className="absolute top-1/2 right-8 w-4 h-4 bg-green-500/20 rounded-full"
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0, opacity: 0 }}
-                      transition={{ delay: 0.3 }}
-                    />
-                  </>
-                )}
-              </AnimatePresence>
             </motion.div>
           ))}
         </div>
@@ -211,15 +153,7 @@ export const Projects = () => {
           className="mt-16 text-center"
         >
           <div className="inline-flex items-center gap-4 px-6 py-3 bg-white rounded-full shadow-sm border border-gray-200">
-            <motion.div
-              className="w-3 h-3 bg-green-500 rounded-full animate-pulse"
-            />
             <span className="text-gray-600">More projects coming soon!</span>
-            <motion.div
-              className="w-3 h-3 bg-blue-500 rounded-full"
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
           </div>
         </motion.div>
       </div>

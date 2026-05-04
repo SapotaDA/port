@@ -21,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
   }, [isBright]);
 
   useEffect(() => {
-    // Apply theme to document element only once
+    // Apply theme to document element only when isBright changes
     const root = document.documentElement;
     if (isBright) {
       root.style.setProperty('--bg-color', '#ffffff');
