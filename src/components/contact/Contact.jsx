@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });

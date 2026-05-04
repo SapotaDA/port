@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Star, Heart, Eye } from "lucide-react";
 import { useState } from "react";
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const projects = [
   {

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import { Code, Zap, Trophy, RotateCcw, Play } from "lucide-react";
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const MiniGame = () => {
   const [gameState, setGameState] = useState('idle');
