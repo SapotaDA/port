@@ -12,7 +12,8 @@ export const ThemeToggle = () => {
       style={{
         backgroundColor: colors.cardBg,
         borderColor: colors.border,
-        color: colors.text
+        color: colors.text,
+        boxShadow: colors.text === '#000000' ? '0 4px 6px rgba(0, 0, 0, 0.1)' : '0 4px 6px rgba(255, 255, 255, 0.1)'
       }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
