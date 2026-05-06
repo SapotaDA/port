@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Star, Heart, Eye } from "lucide-react";
+import { ExternalLink, Github, Star, Heart, Eye, ArrowRight, Code2 } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from '../../contexts/ThemeContext';
 
@@ -11,7 +11,8 @@ const projects = [
     github: "#",
     link: "#",
     likes: 42,
-    views: 1234
+    views: 1234,
+    featured: true
   },
   {
     title: "AI-Powered Image Generator",
@@ -20,7 +21,8 @@ const projects = [
     github: "#",
     link: "#",
     likes: 38,
-    views: 892
+    views: 892,
+    featured: false
   },
   {
     title: "3D Interactive Portfolio",
@@ -29,14 +31,26 @@ const projects = [
     github: "#",
     link: "#",
     likes: 56,
-    views: 2156
+    views: 2156,
+    featured: false
   },
+  {
+    title: "Real-Time Chat Application",
+    description: "Full-stack chat application with WebSocket integration, real-time messaging, user authentication, and message history. Features emoji reactions and typing indicators.",
+    tech: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
+    github: "#",
+    link: "#",
+    likes: 67,
+    views: 1543,
+    featured: false
+  }
 ];
 
 export const Projects = () => {
   const { colors } = useTheme();
   const [likedProjects, setLikedProjects] = useState(new Set());
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [filter, setFilter] = useState('all');
 
   const toggleLike = (projectId) => {
     setLikedProjects(prev => {
@@ -50,9 +64,12 @@ export const Projects = () => {
     });
   };
 
+  const filteredProjects = filter === 'featured' 
+    ? projects.filter(p => p.featured)
+    : projects;
+
   return (
     <section id="projects" className="py-20 px-6" style={{ backgroundColor: colors.background }}>
-
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,99 +79,219 @@ export const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Projects</h2>
-          <p className="text-xl mb-4" style={{ color: colors.textSecondary }}>Here are a few of my projects.</p>
+          <p className="text-xl mb-8" style={{ color: colors.textSecondary }}>Explore my latest work and creative solutions</p>
+          
+          <div className="flex justify-center gap-4 mb-12">
+            <motion.button
+              onClick={() => setFilter('all')}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                filter === 'all' ? 'ring-2 ring-offset-2' : ''
+              }`}
+              style={{
+                backgroundColor: filter === 'all' ? colors.accent : colors.cardBg,
+                color: filter === 'all' ? colors.background : colors.textSecondary,
+                borderColor: colors.border,
+                ringColor: filter === 'all' ? colors.accent : 'transparent',
+                ringOffsetColor: colors.background
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              All Projects
+            </motion.button>
+            <motion.button
+              onClick={() => setFilter('featured')}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                filter === 'featured' ? 'ring-2 ring-offset-2' : ''
+              }`}
+              style={{
+                backgroundColor: filter === 'featured' ? colors.accent : colors.cardBg,
+                color: filter === 'featured' ? colors.background : colors.textSecondary,
+                borderColor: colors.border,
+                ringColor: filter === 'featured' ? colors.accent : 'transparent',
+                ringOffsetColor: colors.background
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Star size={16} className="mr-2" />
+              Featured
+            </motion.button>
+          </div>
         </motion.div>
         
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="px-8 py-3 rounded-lg shadow-sm border relative overflow-hidden group"
-              style={{ 
-                backgroundColor: colors.cardBg,
-                borderColor: colors.border
-              }}
-            >
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>{project.title}</h3>
-                  <div className="flex items-center gap-2 text-sm" style={{ color: colors.textSecondary }}>
-                    <div className="flex items-center gap-1">
-                      <Eye size={14} />
-                      <span>{project.views}</span>
-                    </div>
-                    <motion.button
-                      onClick={() => toggleLike(index)}
-                      className="flex items-center gap-1"
-                      style={{ color: colors.textSecondary }}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Heart 
-                        size={14} 
-                        className={likedProjects.has(index) ? 'fill-red-500 text-red-500' : ''}
-                      />
-                      <span>{project.likes + (likedProjects.has(index) ? 1 : 0)}</span>
-                    </motion.button>
-                  </div>
-                </div>
-                
-                <p className="leading-relaxed" style={{ color: colors.textSecondary }}>{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 rounded-full text-sm"
-                      style={{ 
-                        backgroundColor: colors.cardBg,
-                        color: colors.textSecondary,
-                        border: `1px solid ${colors.border}`
+        <div className="space-y-8">
+          <AnimatePresence mode="wait">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                layout
+                className="group"
+                onMouseEnter={() => setHoveredProject(project.title)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
+                <motion.div
+                  className="px-8 py-6 rounded-xl shadow-lg border relative overflow-hidden"
+                  style={{ 
+                    backgroundColor: colors.cardBg,
+                    borderColor: colors.border
+                  }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: colors.text === '#000000' 
+                      ? '0 20px 25px -5px rgba(0, 0, 0, 0.1)'
+                      : '0 20px 25px -5px rgba(255, 255, 255, 0.1)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {project.featured && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold"
+                      style={{
+                        backgroundColor: colors.accent,
+                        color: colors.background
                       }}
                     >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex gap-4">
-                  <motion.a
-                    href={project.github}
-                    className="inline-flex items-center gap-2"
-                    style={{ color: colors.textSecondary }}
-                  >
-                    <Github size={18} />
-                    <span>Code</span>
-                  </motion.a>
-                  <motion.a
-                    href={project.link}
-                    className="inline-flex items-center gap-2"
-                    style={{ color: colors.textSecondary }}
-                  >
-                    <ExternalLink size={18} />
-                    <span>Live Demo</span>
-                  </motion.a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                      <Star size={12} className="mr-1" />
+                      Featured
+                    </motion.div>
+                  )}
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text }}>{project.title}</h3>
+                        <div className="flex items-center gap-4 text-sm" style={{ color: colors.textSecondary }}>
+                          <div className="flex items-center gap-1">
+                            <Eye size={14} />
+                            <span>{project.views.toLocaleString()}</span>
+                          </div>
+                          <motion.button
+                            onClick={() => toggleLike(index)}
+                            className="flex items-center gap-1"
+                            style={{ color: likedProjects.has(index) ? '#ef4444' : colors.textSecondary }}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                          >
+                            <Heart 
+                              size={14} 
+                              className={likedProjects.has(index) ? 'fill-current' : ''}
+                            />
+                            <span>{project.likes + (likedProjects.has(index) ? 1 : 0)}</span>
+                          </motion.button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p className="leading-relaxed mb-6" style={{ color: colors.textSecondary }}>{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tech.map((tech, techIndex) => (
+                        <motion.span
+                          key={techIndex}
+                          className="px-3 py-1 rounded-full text-sm font-medium"
+                          style={{ 
+                            backgroundColor: colors.cardBg,
+                            color: colors.textSecondary,
+                            border: `1px solid ${colors.border}`
+                          }}
+                          whileHover={{ 
+                            scale: 1.1,
+                            backgroundColor: colors.accent,
+                            color: colors.background
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-3">
+                        <motion.a
+                          href={project.github}
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border"
+                          style={{ 
+                            color: colors.textSecondary,
+                            borderColor: colors.border
+                          }}
+                          whileHover={{ 
+                            scale: 1.05,
+                            backgroundColor: colors.accent,
+                            color: colors.background,
+                            borderColor: colors.accent
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <Github size={18} />
+                          <span>Code</span>
+                        </motion.a>
+                        <motion.a
+                          href={project.link}
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border"
+                          style={{ 
+                            color: colors.textSecondary,
+                            borderColor: colors.border
+                          }}
+                          whileHover={{ 
+                            scale: 1.05,
+                            backgroundColor: colors.accent,
+                            color: colors.background,
+                            borderColor: colors.accent
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ExternalLink size={18} />
+                          <span>Live Demo</span>
+                        </motion.a>
+                      </div>
+                      
+                      {hoveredProject === project.title && (
+                        <motion.div
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: 20 }}
+                          className="text-sm"
+                          style={{ color: colors.accent }}
+                        >
+                          <ArrowRight size={16} />
+                        </motion.div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
         
-        {/* Interactive footer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="text-center mt-16"
         >
-          <div className="inline-flex items-center gap-4 px-6 py-3 bg-white rounded-full shadow-sm border border-gray-200">
-            <span className="text-gray-600">More projects coming soon!</span>
-          </div>
+          <motion.a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg font-medium"
+            style={{
+              backgroundColor: colors.accent,
+              color: colors.background
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>Interested in working together?</span>
+            <ArrowRight size={20} />
+          </motion.a>
         </motion.div>
       </div>
     </section>

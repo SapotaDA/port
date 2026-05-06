@@ -5,18 +5,57 @@ import { Contact } from "./components/contact/Contact";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ThemeToggle } from "./components/common/ThemeToggle";
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import "./styles/index.css";
 
 function App() {
+  useEffect(() => {
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Add intersection observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    // Observe all sections
+    document.querySelectorAll('section').forEach((section) => {
+      observer.observe(section);
+    });
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <ThemeProvider>
-      <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="min-h-screen" 
+        style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
+      >
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: 'var(--nav-bg)', borderBottomColor: 'var(--border-color)' }}>
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" className="text-xl font-bold" style={{ color: 'var(--text-color)' }}>
+            <motion.a 
+              href="#" 
+              className="text-xl font-bold" 
+              style={{ color: 'var(--text-color)' }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Aarav Uniyal
-            </a>
+            </motion.a>
             <div className="flex items-center space-x-8">
               <a href="#about" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 About
@@ -59,7 +98,7 @@ function App() {
         
         {/* Theme Toggle */}
         <ThemeToggle />
-      </div>
+      </motion.div>
     </ThemeProvider>
   );
 }
