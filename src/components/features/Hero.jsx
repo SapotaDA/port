@@ -23,7 +23,8 @@ export const Hero = () => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            color: 'transparent'
+            color: 'transparent',
+            padding: '2px 4px'
           }}>
             Aarav Uniyal
           </span>

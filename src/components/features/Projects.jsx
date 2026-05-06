@@ -8,8 +8,8 @@ const projects = [
     title: "E-Commerce Platform",
     description: "Full-featured MERN e-commerce solution with real-time inventory management, secure payment processing via Stripe, and comprehensive admin dashboard. Optimized for performance with 95+ Lighthouse score.",
     tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    github: "#",
-    link: "#",
+    github: "https://github.com/SapotaDA/ecommerce-platform",
+    link: "https://ecommerce-demo.vercel.app",
     likes: 42,
     views: 1234,
     featured: true
@@ -18,8 +18,8 @@ const projects = [
     title: "AI-Powered Image Generator",
     description: "Web application leveraging OpenAI's DALL-E API for intelligent image generation. Features include prompt optimization, batch processing, and cloud storage integration with Cloudinary.",
     tech: ["React", "Express", "OpenAI API", "Cloudinary", "Material-UI"],
-    github: "#",
-    link: "#",
+    github: "https://github.com/SapotaDA/ai-image-generator",
+    link: "https://ai-image-generator.vercel.app",
     likes: 38,
     views: 892,
     featured: false
@@ -28,8 +28,8 @@ const projects = [
     title: "3D Interactive Portfolio",
     description: "Immersive 3D web experience showcasing projects in an interactive environment. Built with modern web technologies for smooth animations and exceptional performance across devices.",
     tech: ["React Three Fiber", "Three.js", "Framer Motion", "WebGL"],
-    github: "#",
-    link: "#",
+    github: "https://github.com/SapotaDA/3d-portfolio",
+    link: "https://3d-portfolio.vercel.app",
     likes: 56,
     views: 2156,
     featured: false
@@ -38,8 +38,8 @@ const projects = [
     title: "Real-Time Chat Application",
     description: "Full-stack chat application with WebSocket integration, real-time messaging, user authentication, and message history. Features emoji reactions and typing indicators.",
     tech: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
-    github: "#",
-    link: "#",
+    github: "https://github.com/SapotaDA/chat-application",
+    link: "https://chat-app.vercel.app",
     likes: 67,
     views: 1543,
     featured: false

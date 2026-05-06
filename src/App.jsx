@@ -1,6 +1,8 @@
 import { Hero } from "./components/features/Hero";
 import { About } from "./components/features/About";
 import { Projects } from "./components/features/Projects";
+import { Skills } from "./components/features/Skills";
+import { Experience } from "./components/features/Experience";
 import { Contact } from "./components/contact/Contact";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ThemeToggle } from "./components/common/ThemeToggle";
@@ -66,6 +68,24 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
+              <a href="#skills" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+                Skills
+                <motion.div 
+                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  style={{ backgroundColor: 'var(--accent-color)' }}
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                />
+              </a>
+              <a href="#experience" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+                Experience
+                <motion.div 
+                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  style={{ backgroundColor: 'var(--accent-color)' }}
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                />
+              </a>
               <a href="#projects" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
                 Projects
                 <motion.div 
@@ -92,6 +112,8 @@ function App() {
         <main className="pt-20">
           <Hero />
           <About />
+          <Skills />
+          <Experience />
           <Projects />
           <Contact />
         </main>
