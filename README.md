@@ -1,24 +1,26 @@
-# Aarav's Cyberpunk Gaming Portfolio
+# Aarav Uniyal - Full Stack Developer Portfolio
 
-A cutting-edge cyberpunk-themed 3D developer portfolio with cinematic intro, gaming character, and immersive visual effects.
+A modern, clean, and professional portfolio showcasing my skills and projects with a sleek black and white theme system.
 
-## 🎮 Features
-- **Cinematic Intro**: 4.5-second animated opening with initialize button
-- **3D Gaming Character**: Animated cyberpunk avatar with energy effects
-- **Cyberpunk Theme**: Neon pink, purple, and cyan color palette
-- **Interactive DesktopUI**: Game-like interface with spring animations
-- **3D Scene**: Dynamic camera movement with mouse interaction
-- **Particle Systems**: Multi-colored floating particles and effects
-- **Responsive Design**: Optimized for all screen sizes
+## 🎨 Features
 
-## 🛠 Tech Stack
-- **React (Vite)** - Frontend framework
-- **Three.js** - 3D graphics
-- **React Three Fiber** - React renderer for Three.js
-- **React Three Drei** - Helper components and utilities
-- **Framer Motion** - UI animations and transitions
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Icon library
+- **Pure Black & White Theme**: Clean, professional color scheme with bright/unbright toggle
+- **Responsive Design**: Optimized for all screen sizes and devices
+- **Smooth Animations**: Scroll-triggered animations and micro-interactions
+- **Interactive Elements**: Hover effects, transitions, and engaging UI components
+- **Modern Tech Stack**: Built with React, Framer Motion, and Tailwind CSS
+- **Project Showcase**: Interactive project cards with filtering and animations
+- **Skills Section**: Animated progress bars with technical proficiency
+- **Contact Form**: Functional contact form with validation and feedback
+- **Performance Optimized**: Fast loading and smooth transitions
+
+## 🛠️ Tech Stack
+
+- **React (Vite)** - Frontend framework with fast development
+- **Framer Motion** - Smooth animations and transitions
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Lucide React** - Modern icon library
+- **React Context API** - Theme management and state handling
 
 ## 🚀 Getting Started
 
@@ -27,7 +29,7 @@ A cutting-edge cyberpunk-themed 3D developer portfolio with cinematic intro, gam
    npm install
    ```
 
-2. **Run the development server**:
+2. **Run development server**:
    ```bash
    npm run dev
    ```
@@ -38,35 +40,38 @@ A cutting-edge cyberpunk-themed 3D developer portfolio with cinematic intro, gam
    ```
 
 ## 📁 Project Structure
+
 ```
 src/
 ├── components/
-│   ├── 3d/              # 3D components
-│   │   ├── Experience.jsx
-│   │   └── GamingCharacter.jsx
-│   ├── animations/      # Animation components
-│   │   └── CinematicIntro.jsx
-│   ├── ui/              # UI components
-│   │   └── DesktopUI.jsx
-│   ├── About.jsx
-│   ├── Contact.jsx
-│   ├── Hero.jsx
-│   ├── Projects.jsx
-│   └── Skills.jsx
-├── styles/
+│   ├── common/           # Shared components
+│   │   ├── ThemeToggle.jsx
+│   │   └── LoadingSpinner.jsx
+│   ├── features/         # Feature components
+│   │   ├── About.jsx
+│   │   ├── Hero.jsx
+│   │   └── Projects.jsx
+│   ├── contact/          # Contact components
+│   │   └── Contact.jsx
+│   └── ui/              # UI components
+│       └── DesktopUI.jsx
+├── contexts/           # Context providers
+│   └── ThemeContext.jsx
+├── styles/            # Styles
 │   └── index.css
-├── utils/
-│   └── main.jsx
-├── App.jsx
-└── main.jsx
+├── utils/             # Utility functions
+│   └── index.js
+├── App.jsx            # Main application component
+└── main.jsx           # Application entry point
 ```
 
 ## 🎨 Design Elements
-- **Color Palette**: Cyberpunk neon colors (#ff006e, #8338ec, #3a86ff)
-- **Typography**: Orbitron monospace font for cyberpunk feel
-- **Animations**: Spring physics, glitch effects, neon pulses
-- **3D Elements**: Monitor, gaming character, tech orbs, holographic panels
-- **Interactive Features**: Hover states, micro-interactions, particle effects
+
+- **Color Palette**: Pure black and white with gray accents
+- **Typography**: System fonts for optimal readability
+- **Animations**: Smooth entrance, hover, and scroll animations
+- **Interactive Features**: Theme toggle, project filters, and micro-interactions
+- **Responsive Layout**: Mobile-first design approach
 
 ## 🌐 Deployment
 
@@ -76,32 +81,45 @@ This portfolio is deployed and available at:
 
 ## 🎯 Key Components
 
-### CinematicIntro.jsx
-- 4.5-second animated opening sequence
-- Clickable initialize button
-- Particle effects and animations
-- Cyberpunk branding and effects
+### Hero Section
+- Clean introduction with animated name gradient
+- Call-to-action buttons with hover effects
+- Smooth scroll indicator
 
-### GamingCharacter.jsx
-- 3D cyberpunk avatar with armor
-- Floating and breathing animations
-- Energy core with particle trails
-- Positioned in 3D scene
+### About Section
+- Technical skills with animated progress bars
+- Professional description with staggered animations
+- Icon-based skill representation
 
-### Experience.jsx
-- Main 3D scene with monitor
-- Dynamic camera movement
-- Mouse-responsive controls
-- Multiple 3D elements and effects
+### Projects Section
+- Interactive project cards with hover effects
+- Featured project filtering system
+- Like and view counters with animations
+- Tech stack tags with hover interactions
 
-### DesktopUI.jsx
-- Interactive desktop interface
-- Animated windows and navigation
-- Cyberpunk styling and effects
-- Spring physics animations
+### Contact Section
+- Functional contact form with validation
+- Animated loading states and success feedback
+- Contact information and social media links
+- Interactive hover effects and transitions
 
 ## 🔧 Customization
-- Modify colors in `src/styles/index.css`
-- Update 3D elements in `src/components/3d/`
-- Customize animations in `src/components/animations/`
-- Adjust UI components in `src/components/ui/`
+
+- **Theme Colors**: Modify CSS variables in `src/styles/index.css`
+- **Animations**: Adjust keyframes and transitions in CSS
+- **Component Styling**: Update component styles and interactions
+- **Content**: Update project information and personal details
+
+## 📱 Responsive Features
+
+- **Mobile-First**: Designed for mobile devices first
+- **Tablet Support**: Optimized for tablet screens
+- **Desktop Experience**: Enhanced for larger screens
+- **Touch Interactions**: Mobile-friendly touch targets
+
+## ⚡ Performance
+
+- **Optimized Build**: Fast loading times
+- **Smooth Animations**: Hardware-accelerated CSS transforms
+- **Efficient State**: Minimal re-renders and optimized updates
+- **Clean Code**: Well-structured and maintainable codebase
