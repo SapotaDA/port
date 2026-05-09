@@ -42,10 +42,8 @@ export const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Chapters of Growth</h2>
-          <p className="text-xl" style={{ color: colors.textSecondary }}>
-            A chronological tale of challenges met and skills mastered.
-          </p>
+          <h2 className="text-5xl font-black text-[#00fff2] neon-text uppercase tracking-tighter">Chapters of Growth</h2>
+          <div className="w-24 h-1 bg-[#ff00ff] mx-auto mt-4 shadow-[0_0_10px_#ff00ff]" />
         </motion.div>
 
         <div className="relative">

@@ -92,10 +92,8 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Connect the Future</h2>
-          <p className="text-xl" style={{ color: colors.textSecondary }}>
-            Let's start the next chapter of the story together.
-          </p>
+          <h2 className="text-5xl font-black text-[#00fff2] neon-text uppercase tracking-tighter">Connect the Future</h2>
+          <div className="w-24 h-1 bg-[#ff00ff] mx-auto mt-4 shadow-[0_0_10px_#ff00ff]" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

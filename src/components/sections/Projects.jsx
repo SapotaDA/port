@@ -76,10 +76,11 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Visions Rendered</h2>
-          <p className="text-xl mb-8" style={{ color: colors.textSecondary }}>The physical manifestation of digital dreams.</p>
+          <h2 className="text-5xl md:text-6xl font-black text-[#00fff2] neon-text uppercase tracking-tighter">Visions Rendered</h2>
+          <div className="w-24 h-1 bg-[#ff00ff] mx-auto mt-4 shadow-[0_0_10px_#ff00ff]" />
+        </motion.div>
           
           <div className="flex justify-center gap-4 mb-12">
             <motion.button

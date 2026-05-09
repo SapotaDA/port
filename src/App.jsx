@@ -6,7 +6,6 @@ import { Experience } from "./components/sections/Experience";
 import { Contact } from "./components/sections/Contact";
 import StarsCanvas from "./components/canvas/Stars";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { ThemeToggle } from "./components/ui/ThemeToggle";
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect } from 'react';
 import "./styles/index.css";
@@ -20,122 +19,68 @@ function App() {
   });
 
   useEffect(() => {
-    // Smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-    
-    // Add intersection observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    // Observe all sections
-    document.querySelectorAll('section').forEach((section) => {
-      observer.observe(section);
-    });
-    
-    return () => {
-      observer.disconnect();
-    };
+    document.title = "AARAV | CYBERNETIC ARCHITECT";
   }, []);
 
   return (
     <ThemeProvider>
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen" 
-        style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
-      >
-        {/* Scroll Progress Bar */}
+      <div className="relative z-0 bg-[#050505] min-h-screen font-sans selection:bg-[#ff00ff] selection:text-white">
+        {/* Cinematic Progress Bar */}
         <motion.div
-          className="fixed top-0 left-0 right-0 h-1 z-[100] origin-left"
-          style={{ scaleX, backgroundColor: 'var(--accent-color)' }}
+          className="fixed top-0 left-0 right-0 h-1 bg-[#ff00ff] z-[100] origin-left shadow-[0_0_15px_#ff00ff]"
+          style={{ scaleX }}
         />
 
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-[#ffffff10]" style={{ backgroundColor: 'var(--nav-bg)' }}>
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-[#ff00ff20] bg-[#050505cc]">
           <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <motion.a 
               href="#" 
-              className="text-xl font-bold tracking-wider" 
-              style={{ color: 'var(--text-color)' }}
+              className="text-2xl font-black tracking-tighter text-[#00fff2] neon-text"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              AARAV <span style={{ color: 'var(--accent-color)' }}>UNIYAL</span>
+              AARAV.SYS
             </motion.a>
-            <div className="flex items-center space-x-8">
-              <a href="#about" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
-                The Journey
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                />
-              </a>
-              <a href="#skills" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
-                The Toolkit
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                />
-              </a>
-              <a href="#experience" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
-                Chapters
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                />
-              </a>
-              <a href="#projects" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
-                Visions
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                />
-              </a>
-              <a href="#contact" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
-                Connect
-                <motion.div 
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
-                  initial={{ width: 0 }}
-                  whileHover={{ width: '100%' }}
-                />
-              </a>
+            <div className="hidden md:flex items-center space-x-10">
+              {[
+                ['THE JOURNEY', '#about'],
+                ['THE TOOLKIT', '#skills'],
+                ['CHAPTERS', '#experience'],
+                ['VISIONS', '#projects'],
+                ['CONNECT', '#contact']
+              ].map(([label, href]) => (
+                <a 
+                  key={href}
+                  href={href} 
+                  className="text-xs font-bold tracking-[0.2em] text-[#9d00ff] hover:text-[#00fff2] transition-colors duration-300"
+                >
+                  {label}
+                </a>
+              ))}
             </div>
           </div>
         </nav>
 
-        {/* Main Content */}
-        <main className="pt-20">
+        {/* 3D Ambient Background */}
+        <StarsCanvas />
+
+        <main className="relative z-10">
           <Hero />
           <About />
           <Skills />
           <Experience />
           <Projects />
           <Contact />
-          <StarsCanvas />
         </main>
-        
-        {/* Theme Toggle */}
-        <ThemeToggle />
-      </motion.div>
+
+        {/* Cyber Footer */}
+        <footer className="py-10 text-center border-t border-[#ff00ff10] bg-[#050505]">
+          <p className="text-[#9d00ff] font-mono text-xs tracking-widest uppercase">
+            © 2024 AARAV UNIYAL // ESTABLISHED IN THE VOID
+          </p>
+        </footer>
+      </div>
     </ThemeProvider>
   );
 }
