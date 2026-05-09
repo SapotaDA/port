@@ -42,9 +42,9 @@ export const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Experience</h2>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Chapters of Growth</h2>
           <p className="text-xl" style={{ color: colors.textSecondary }}>
-            Professional journey and growth through meaningful projects
+            A chronological tale of challenges met and skills mastered.
           </p>
         </motion.div>
 
@@ -91,22 +91,24 @@ export const Experience = () => {
                       <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text }}>
                         {exp.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-sm" style={{ color: colors.textSecondary }}>
-                        <Calendar size={16} className="mr-2" />
-                        <span>{exp.period}</span>
+                      <div className="flex flex-wrap gap-4 mb-4">
+                        <div className="flex items-center gap-2 text-sm" style={{ color: colors.textSecondary }}>
+                          <Calendar size={16} />
+                          <span>{exp.period}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm" style={{ color: colors.textSecondary }}>
+                          <MapPin size={16} />
+                          <span>{exp.location}</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 text-sm" style={{ color: colors.textSecondary }}>
-                        <MapPin size={16} className="mr-2" />
-                        <span>{exp.location}</span>
-                      </div>
+                      <p className="leading-relaxed mb-6" style={{ color: colors.textSecondary }}>
+                        {exp.description}
+                      </p>
                     </div>
-                    
-                    <p className="leading-relaxed mb-6" style={{ color: colors.textSecondary }}>
-                      {exp.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {exp.achievements.map((achievement, achIndex) => (
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {exp.achievements.map((achievement, achIndex) => (
                         <motion.div
                           key={achIndex}
                           initial={{ opacity: 0, scale: 0.8 }}

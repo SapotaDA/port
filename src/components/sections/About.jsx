@@ -21,19 +21,19 @@ export const About = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold mb-8 text-center" style={{ color: colors.text }}>About Me</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center" style={{ color: colors.text }}>The Journey</h2>
           
           <div className="space-y-6 text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
             <p>
-              I am a passionate MERN stack developer who loves creating modern, scalable web applications. 
-              With expertise in React, Node.js, and MongoDB, I specialize in building full-stack applications 
-              that deliver exceptional user experiences while following industry best practices.
+              Every great project starts with a single line of code. My story began with a curiosity for how the digital world works, 
+              which quickly evolved into a mission to build scalable, full-stack solutions. 
+              As a MERN stack developer, I don't just build websites; I create digital homes for ideas.
             </p>
             
             <p>
-              My journey in web development is driven by a commitment to clean code and practical solutions. 
-              I believe in creating maintainable applications that not only function perfectly but also provide 
-              excellent user experiences through thoughtful design and efficient architecture.
+              With expertise in React, Node.js, and MongoDB, I bridge the gap between complex backend logic and 
+              intuitive frontend experiences. I believe that code is a form of craftsmanship—one that requires 
+              precision, creativity, and a constant thirst for learning.
             </p>
           </div>
           

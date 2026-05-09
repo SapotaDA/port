@@ -57,9 +57,9 @@ export const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Technical Skills</h2>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>The Toolkit</h2>
           <p className="text-xl mb-12" style={{ color: colors.textSecondary }}>
-            Comprehensive expertise across modern web development technologies
+            The instruments I use to compose digital symphonies.
           </p>
         </motion.div>
 

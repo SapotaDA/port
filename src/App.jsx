@@ -1,16 +1,24 @@
-import { Hero } from "./components/features/Hero";
-import { About } from "./components/features/About";
-import { Projects } from "./components/features/Projects";
-import { Skills } from "./components/features/Skills";
-import { Experience } from "./components/features/Experience";
-import { Contact } from "./components/contact/Contact";
+import { Hero } from "./components/sections/Hero";
+import { About } from "./components/sections/About";
+import { Projects } from "./components/sections/Projects";
+import { Skills } from "./components/sections/Skills";
+import { Experience } from "./components/sections/Experience";
+import { Contact } from "./components/sections/Contact";
+import StarsCanvas from "./components/canvas/Stars";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { ThemeToggle } from "./components/common/ThemeToggle";
-import { motion } from 'framer-motion';
+import { ThemeToggle } from "./components/ui/ThemeToggle";
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect } from 'react';
 import "./styles/index.css";
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   useEffect(() => {
     // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -46,6 +54,12 @@ function App() {
         className="min-h-screen" 
         style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}
       >
+        {/* Scroll Progress Bar */}
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 z-[100] origin-left"
+          style={{ scaleX, backgroundColor: 'var(--accent-color)' }}
+        />
+
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: 'var(--nav-bg)', borderBottomColor: 'var(--border-color)' }}>
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -60,7 +74,7 @@ function App() {
             </motion.a>
             <div className="flex items-center space-x-8">
               <a href="#about" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
-                About
+                The Journey
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
                   style={{ backgroundColor: 'var(--accent-color)' }}
@@ -69,7 +83,7 @@ function App() {
                 />
               </a>
               <a href="#skills" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
-                Skills
+                The Toolkit
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
                   style={{ backgroundColor: 'var(--accent-color)' }}
@@ -78,7 +92,7 @@ function App() {
                 />
               </a>
               <a href="#experience" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
-                Experience
+                Chapters
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
                   style={{ backgroundColor: 'var(--accent-color)' }}
@@ -87,7 +101,7 @@ function App() {
                 />
               </a>
               <a href="#projects" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
-                Projects
+                Visions
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
                   style={{ backgroundColor: 'var(--accent-color)' }}
@@ -96,7 +110,7 @@ function App() {
                 />
               </a>
               <a href="#contact" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
-                Contact
+                Connect
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
                   style={{ backgroundColor: 'var(--accent-color)' }}
@@ -116,6 +130,7 @@ function App() {
           <Experience />
           <Projects />
           <Contact />
+          <StarsCanvas />
         </main>
         
         {/* Theme Toggle */}

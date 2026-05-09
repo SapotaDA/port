@@ -92,9 +92,9 @@ export const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Connect the Future</h2>
           <p className="text-xl" style={{ color: colors.textSecondary }}>
-            Let's collaborate on your next project. I'd love to hear from you!
+            Let's start the next chapter of the story together.
           </p>
         </motion.div>
 

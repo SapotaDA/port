@@ -78,8 +78,8 @@ export const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Projects</h2>
-          <p className="text-xl mb-8" style={{ color: colors.textSecondary }}>Explore my latest work and creative solutions</p>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Visions Rendered</h2>
+          <p className="text-xl mb-8" style={{ color: colors.textSecondary }}>The physical manifestation of digital dreams.</p>
           
           <div className="flex justify-center gap-4 mb-12">
             <motion.button
