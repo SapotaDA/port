@@ -15,13 +15,14 @@ const HeroCanvas = () => {
           <directionalLight position={[10, 10, 5]} intensity={1} />
           <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
           
-          <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-            <Sphere args={[1, 100, 200]} scale={2.4}>
+          <Float speed={1.75} rotationIntensity={1} floatIntensity={1}>
+            <Sphere args={[1, 100, 200]} scale={1.8}>
               <MeshDistortMaterial
                 color="#915EFF"
                 attach="material"
-                distort={0.5}
-                speed={2}
+                distort={0.4}
+                speed={1.5}
+                roughness={0.2}
               />
             </Sphere>
           </Float>

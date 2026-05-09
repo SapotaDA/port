@@ -4,14 +4,14 @@
 
 /* CSS Variables for Theme */
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --text-secondary-color: #666666;
-  --border-color: #e5e5e5;
-  --card-bg: #ffffff;
-  --nav-bg: rgba(255, 255, 255, 0.8);
-  --accent-color: #000000;
-  --accent-secondary: #666666;
+  --bg-color: #050816;
+  --text-color: #ffffff;
+  --text-secondary-color: #aaa6c3;
+  --border-color: #1d1836;
+  --card-bg: #151030;
+  --nav-bg: rgba(5, 8, 22, 0.8);
+  --accent-color: #915eff;
+  --accent-secondary: #804dee;
 }
 
 /* Custom styles for black and white portfolio design */

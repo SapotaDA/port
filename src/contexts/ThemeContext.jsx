@@ -13,7 +13,7 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [isBright, setIsBright] = useState(() => {
     const saved = localStorage.getItem('theme-brightness');
-    return saved !== null ? JSON.parse(saved) : true;
+    return saved !== null ? JSON.parse(saved) : false;
   });
 
   useEffect(() => {
@@ -21,7 +21,6 @@ export const ThemeProvider = ({ children }) => {
   }, [isBright]);
 
   useEffect(() => {
-    // Apply theme to document element only when isBright changes
     const root = document.documentElement;
     if (isBright) {
       root.style.setProperty('--bg-color', '#ffffff');
@@ -31,16 +30,14 @@ export const ThemeProvider = ({ children }) => {
       root.style.setProperty('--card-bg', '#ffffff');
       root.style.setProperty('--nav-bg', 'rgba(255, 255, 255, 0.8)');
       root.style.setProperty('--accent-color', '#000000');
-      root.style.setProperty('--accent-secondary', '#666666');
     } else {
-      root.style.setProperty('--bg-color', '#000000');
+      root.style.setProperty('--bg-color', '#050816');
       root.style.setProperty('--text-color', '#ffffff');
-      root.style.setProperty('--text-secondary-color', '#999999');
-      root.style.setProperty('--border-color', '#333333');
-      root.style.setProperty('--card-bg', '#1a1a1a');
-      root.style.setProperty('--nav-bg', 'rgba(0, 0, 0, 0.8)');
-      root.style.setProperty('--accent-color', '#ffffff');
-      root.style.setProperty('--accent-secondary', '#cccccc');
+      root.style.setProperty('--text-secondary-color', '#aaa6c3');
+      root.style.setProperty('--border-color', '#1d1836');
+      root.style.setProperty('--card-bg', '#151030');
+      root.style.setProperty('--nav-bg', 'rgba(5, 8, 22, 0.8)');
+      root.style.setProperty('--accent-color', '#915eff');
     }
   }, [isBright]);
 
@@ -52,14 +49,13 @@ export const ThemeProvider = ({ children }) => {
     isBright,
     toggleBrightness,
     colors: {
-      background: isBright ? '#ffffff' : '#000000',
+      background: isBright ? '#ffffff' : '#050816',
       text: isBright ? '#000000' : '#ffffff',
-      textSecondary: isBright ? '#666666' : '#999999',
-      border: isBright ? '#e5e5e5' : '#333333',
-      cardBg: isBright ? '#ffffff' : '#1a1a1a',
-      navBg: isBright ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)',
-      accent: isBright ? '#000000' : '#ffffff',
-      accentSecondary: isBright ? '#666666' : '#cccccc'
+      textSecondary: isBright ? '#666666' : '#aaa6c3',
+      border: isBright ? '#e5e5e5' : '#1d1836',
+      cardBg: isBright ? '#ffffff' : '#151030',
+      navBg: isBright ? 'rgba(255, 255, 255, 0.8)' : 'rgba(5, 8, 22, 0.8)',
+      accent: isBright ? '#000000' : '#915eff'
     }
   };
 

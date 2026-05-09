@@ -61,19 +61,19 @@ function App() {
         />
 
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: 'var(--nav-bg)', borderBottomColor: 'var(--border-color)' }}>
-          <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-[#ffffff10]" style={{ backgroundColor: 'var(--nav-bg)' }}>
+          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <motion.a 
               href="#" 
-              className="text-xl font-bold" 
+              className="text-xl font-bold tracking-wider" 
               style={{ color: 'var(--text-color)' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Aarav Uniyal
+              AARAV <span style={{ color: 'var(--accent-color)' }}>UNIYAL</span>
             </motion.a>
             <div className="flex items-center space-x-8">
-              <a href="#about" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#about" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
                 The Journey
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -82,7 +82,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#skills" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#skills" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
                 The Toolkit
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -91,7 +91,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#experience" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#experience" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
                 Chapters
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -100,7 +100,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#projects" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#projects" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
                 Visions
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
@@ -109,7 +109,7 @@ function App() {
                   whileHover={{ width: '100%' }}
                 />
               </a>
-              <a href="#contact" className="relative group" style={{ color: 'var(--text-secondary-color)' }}>
+              <a href="#contact" className="relative group text-sm font-medium hover:text-white transition-colors" style={{ color: 'var(--text-secondary-color)' }}>
                 Connect
                 <motion.div 
                   className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
