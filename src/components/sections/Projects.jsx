@@ -119,7 +119,6 @@ export const Projects = () => {
               Featured
             </motion.button>
           </div>
-        </motion.div>
         
         <div className="space-y-8">
           <AnimatePresence>
