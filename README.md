@@ -1,6 +1,6 @@
 # Aarav Uniyal — Portfolio
 
-A clean, minimal developer portfolio inspired by [Brittany Chiang](https://brittanychiang.com/). Built with React, Tailwind CSS, and Vite.
+A clean, minimal developer portfolio built with React, Tailwind CSS, and Vite.
 
 **Live:** [Coming soon — deploy on Vercel]
 
