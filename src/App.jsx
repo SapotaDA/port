@@ -20,7 +20,7 @@ const projects = [
     title: "Cricket Ground Booking Platform",
     description: "Full-stack web platform enabling users to book cricket grounds with real-time availability, calendar scheduling, and automated booking management. Built with a PostgreSQL-backed reservation system using Drizzle ORM.",
     tech: ["TypeScript", "React", "Express.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS"],
-    github: "https://github.com/SapotaDA",
+    github: "https://github.com/SapotaDA/academy-test",
     period: "Aug — Nov 2025"
   },
   {
@@ -28,6 +28,7 @@ const projects = [
     description: "Full-stack task management system with JWT authentication, bcrypt password hashing, email notifications via Nodemailer, and production-ready deployment with Helmet, rate-limiting, and input sanitization.",
     tech: ["React", "Node.js", "MongoDB", "JWT", "Vite", "TailwindCSS", "Nodemailer"],
     github: "https://github.com/SapotaDA",
+    live: "https://taskiflow.vercel.app/login",
     period: "Nov 2025 — Feb 2026"
   }
 ];
@@ -233,7 +234,7 @@ function Portfolio() {
               <div className="section-heading">Projects</div>
               <div className="space-y-4">
                 {projects.map((p, i) => (
-                  <a key={i} href={p.github} target="_blank" rel="noopener noreferrer" className="hover-card block group" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <a key={i} href={p.live || p.github} target="_blank" rel="noopener noreferrer" className="hover-card block group" style={{ textDecoration: 'none', color: 'inherit' }}>
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-6">
                       <span className="text-xs font-semibold uppercase tracking-wide whitespace-nowrap mt-1" style={{ color: 'var(--text-muted)', minWidth: '140px' }}>
                         {p.period}
