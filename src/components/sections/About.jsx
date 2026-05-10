@@ -45,20 +45,22 @@ export const About = () => {
           
           <div className="max-w-3xl space-y-5 text-lg leading-relaxed" style={{ color: '#a1a1aa' }}>
             <p>
-              I'm a <span style={{ color: '#e4e4e7' }}>MERN Stack Full-Stack Developer</span> building production-ready web applications.
-              I specialize in <span style={{ color: '#e4e4e7' }}>React</span> for the UI, <span style={{ color: '#e4e4e7' }}>Node.js/Express</span> for APIs,
-              and <span style={{ color: '#e4e4e7' }}>MongoDB/PostgreSQL</span> for data modeling.
+              I'm a <span style={{ color: '#e4e4e7' }}>MERN Stack Developer</span> who builds fast, secure, and scalable web apps.
+              I work end-to-end with <span style={{ color: '#e4e4e7' }}>React</span> (UI), <span style={{ color: '#e4e4e7' }}>Node.js + Express</span> (APIs),
+              and <span style={{ color: '#e4e4e7' }}>MongoDB/PostgreSQL</span> (data).
             </p>
-            
+
             <p>
-              I’ve delivered multiple full-stack projects with <span style={{ color: '#e4e4e7' }}>JWT authentication</span>,
-              RESTful APIs, and real-time user experiences. During my internship, I also worked on <span style={{ color: '#e4e4e7' }}>CI/CD on AWS</span>,
-              reducing deployment effort by ~40% and improving release consistency.
+              I’ve shipped production features like <span style={{ color: '#e4e4e7' }}>JWT authentication</span>, <span style={{ color: '#e4e4e7' }}>RESTful APIs</span>,
+              and real-time user flows. During my internship, I also improved delivery by building <span style={{ color: '#e4e4e7' }}>CI/CD pipelines on AWS</span>,
+              reducing deployment effort by ~40%.
             </p>
-            
+
             <p>
               I focus on building <span style={{ color: '#818cf8' }}>scalable</span>, <span style={{ color: '#818cf8' }}>secure</span>,
-              and <span style={{ color: '#818cf8' }}>user-focused</span> applications—clean architecture, reliable APIs, and smooth frontend performance.
+              and <span style={{ color: '#818cf8' }}>user-focused</span> applications—clean architecture, maintainable backend APIs, and smooth UX
+              across mobile and desktop.
+              I'm currently looking for a <span style={{ color: '#818cf8' }}>MERN full-stack role</span> to turn ideas into real-world products.
             </p>
           </div>
         </motion.div>
