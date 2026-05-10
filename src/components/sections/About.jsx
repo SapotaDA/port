@@ -45,21 +45,20 @@ export const About = () => {
           
           <div className="max-w-3xl space-y-5 text-lg leading-relaxed" style={{ color: '#a1a1aa' }}>
             <p>
-              I'm a <span style={{ color: '#e4e4e7' }}>final-year BCA student</span> at Yenepoya University, Bangalore, 
-              and a former <span style={{ color: '#e4e4e7' }}>DevOps Intern at TCS iON</span> (Tata Consultancy Services). 
-              I specialize in building full-stack web applications using React.js, Node.js, and PostgreSQL/MongoDB.
+              I'm a <span style={{ color: '#e4e4e7' }}>MERN Stack Full-Stack Developer</span> building production-ready web applications.
+              I specialize in <span style={{ color: '#e4e4e7' }}>React</span> for the UI, <span style={{ color: '#e4e4e7' }}>Node.js/Express</span> for APIs,
+              and <span style={{ color: '#e4e4e7' }}>MongoDB/PostgreSQL</span> for data modeling.
             </p>
             
             <p>
-              During my internship, I designed and deployed a{' '}
-              <span style={{ color: '#e4e4e7' }}>CI/CD pipeline on AWS</span> that reduced deployment effort by ~40%. 
-              I've delivered two production-ready projects featuring JWT authentication, RESTful APIs, 
-              and real-time booking workflows.
+              I’ve delivered multiple full-stack projects with <span style={{ color: '#e4e4e7' }}>JWT authentication</span>,
+              RESTful APIs, and real-time user experiences. During my internship, I also worked on <span style={{ color: '#e4e4e7' }}>CI/CD on AWS</span>,
+              reducing deployment effort by ~40% and improving release consistency.
             </p>
             
             <p>
-              I'm seeking a <span style={{ color: '#818cf8' }}>full-stack or backend developer role</span> where I can 
-              contribute to scalable, user-focused products and continue growing as an engineer.
+              I focus on building <span style={{ color: '#818cf8' }}>scalable</span>, <span style={{ color: '#818cf8' }}>secure</span>,
+              and <span style={{ color: '#818cf8' }}>user-focused</span> applications—clean architecture, reliable APIs, and smooth frontend performance.
             </p>
           </div>
         </motion.div>
