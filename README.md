@@ -1,125 +1,99 @@
-# Aarav Uniyal - Full Stack Developer Portfolio
+# Aarav Uniyal — Portfolio
 
-A modern, clean, and professional portfolio showcasing my skills and projects with a sleek black and white theme system.
+A clean, minimal developer portfolio inspired by [Brittany Chiang](https://brittanychiang.com/). Built with React, Tailwind CSS, and Vite.
 
-## 🎨 Features
+**Live:** [Coming soon — deploy on Vercel]
 
-- **Pure Black & White Theme**: Clean, professional color scheme with bright/unbright toggle
-- **Responsive Design**: Optimized for all screen sizes and devices
-- **Smooth Animations**: Scroll-triggered animations and micro-interactions
-- **Interactive Elements**: Hover effects, transitions, and engaging UI components
-- **Modern Tech Stack**: Built with React, Framer Motion, and Tailwind CSS
-- **Project Showcase**: Interactive project cards with filtering and animations
-- **Skills Section**: Animated progress bars with technical proficiency
-- **Contact Form**: Functional contact form with validation and feedback
-- **Performance Optimized**: Fast loading and smooth transitions
+---
+
+## ✨ Features
+
+- **Split-panel layout** — Fixed left sidebar with name, nav & socials; scrollable right content
+- **6 Accent color themes** — Indigo, Cyan, Emerald, Rose, Amber, Violet (persisted in localStorage)
+- **Cursor spotlight** — Subtle radial gradient follows your mouse
+- **Intersection Observer** — Navigation highlights the active section on scroll
+- **Hover cards** — Experience & project cards tint on hover
+- **Fully responsive** — Mobile-first with sticky section headings
+- **Real data** — All content sourced from actual resume
+
+## 📋 Sections
+
+| Section | Content |
+|---------|---------|
+| **About** | BCA student at Yenepoya University, former TCS iON DevOps Intern |
+| **Experience** | DevOps Intern — TCS iON (Nov 2025 – Feb 2026) |
+| **Projects** | Cricket Ground Booking Platform, TaskiFlow |
+| **Certifications** | 4 certifications from Coursera, TCS iON, UIUC |
 
 ## 🛠️ Tech Stack
 
-- **React (Vite)** - Frontend framework with fast development
-- **Framer Motion** - Smooth animations and transitions
-- **Tailwind CSS** - Utility-first CSS framework for styling
-- **Lucide React** - Modern icon library
-- **React Context API** - Theme management and state handling
+- **Frontend:** React 18, Tailwind CSS 3
+- **Build:** Vite 5
+- **Icons:** Lucide React
+- **Deployment:** Vercel (recommended)
 
 ## 🚀 Getting Started
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+```bash
+# Clone
+git clone https://github.com/SapotaDA/port.git
+cd port
 
-2. **Run development server**:
-   ```bash
-   npm run dev
-   ```
+# Install
+npm install
 
-3. **Build for production**:
-   ```bash
-   npm run build
-   ```
+# Dev server
+npm run dev
+
+# Production build
+npm run build
+```
 
 ## 📁 Project Structure
 
 ```
 src/
-├── components/
-│   ├── common/           # Shared components
-│   │   ├── ThemeToggle.jsx
-│   │   └── LoadingSpinner.jsx
-│   ├── features/         # Feature components
-│   │   ├── About.jsx
-│   │   ├── Hero.jsx
-│   │   └── Projects.jsx
-│   ├── contact/          # Contact components
-│   │   └── Contact.jsx
-│   └── ui/              # UI components
-│       └── DesktopUI.jsx
-├── contexts/           # Context providers
-│   └── ThemeContext.jsx
-├── styles/            # Styles
-│   └── index.css
-├── utils/             # Utility functions
-│   └── index.js
-├── App.jsx            # Main application component
-└── main.jsx           # Application entry point
+├── App.jsx                  # Main layout (split-panel, all sections)
+├── main.jsx                 # Entry point
+├── styles/
+│   └── index.css            # Global styles, hover cards, theme system
+├── contexts/
+│   └── ThemeContext.jsx      # Accent color picker (6 presets)
+└── components/
+    ├── canvas/
+    │   ├── Stars.jsx         # Ambient star background
+    │   └── HeroCanvas.jsx    # 3D hero element
+    └── sections/             # (Legacy — sections now inline in App.jsx)
 ```
 
-## 🎨 Design Elements
+## 🎨 Changing Accent Color
 
-- **Color Palette**: Pure black and white with gray accents
-- **Typography**: System fonts for optimal readability
-- **Animations**: Smooth entrance, hover, and scroll animations
-- **Interactive Features**: Theme toggle, project filters, and micro-interactions
-- **Responsive Layout**: Mobile-first design approach
+Click any color dot in the left sidebar under "Theme". Your choice is saved to `localStorage` and persists across sessions.
 
-## 🌐 Deployment
+## 📄 Adding Your Resume
 
-This portfolio is deployed and available at:
-- **GitHub**: https://github.com/SapotaDA/port
-- **Live Site**: Deployed via your preferred hosting platform
+Place your resume PDF in the `public/` folder:
 
-## 🎯 Key Components
+```
+public/
+└── Aarav_Uniyal_Resume.pdf
+```
 
-### Hero Section
-- Clean introduction with animated name gradient
-- Call-to-action buttons with hover effects
-- Smooth scroll indicator
+The "View Full Résumé" link in the Experience section will automatically point to it.
 
-### About Section
-- Technical skills with animated progress bars
-- Professional description with staggered animations
-- Icon-based skill representation
+## 🌐 Deploying to Vercel
 
-### Projects Section
-- Interactive project cards with hover effects
-- Featured project filtering system
-- Like and view counters with animations
-- Tech stack tags with hover interactions
+1. Push to GitHub (already done)
+2. Go to [vercel.com](https://vercel.com) → Import your repo
+3. Framework: **Vite** (auto-detected)
+4. Click **Deploy**
 
-### Contact Section
-- Functional contact form with validation
-- Animated loading states and success feedback
-- Contact information and social media links
-- Interactive hover effects and transitions
+## 📬 Contact
 
-## 🔧 Customization
+- **Email:** aaravuniyal3@gmail.com
+- **LinkedIn:** [linkedin.com/in/aaravuniyal](https://linkedin.com/in/aaravuniyal)
+- **GitHub:** [github.com/SapotaDA](https://github.com/SapotaDA)
 
-- **Theme Colors**: Modify CSS variables in `src/styles/index.css`
-- **Animations**: Adjust keyframes and transitions in CSS
-- **Component Styling**: Update component styles and interactions
-- **Content**: Update project information and personal details
+---
 
-## 📱 Responsive Features
-
-- **Mobile-First**: Designed for mobile devices first
-- **Tablet Support**: Optimized for tablet screens
-- **Desktop Experience**: Enhanced for larger screens
-- **Touch Interactions**: Mobile-friendly touch targets
-
-## ⚡ Performance
-
-- **Optimized Build**: Fast loading times
-- **Smooth Animations**: Hardware-accelerated CSS transforms
-- **Efficient State**: Minimal re-renders and optimized updates
-- **Clean Code**: Well-structured and maintainable codebase
+Built with ❤️ by Aarav Uniyal
