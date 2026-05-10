@@ -30,6 +30,13 @@ const projects = [
     github: "https://github.com/SapotaDA",
     live: "https://taskiflow.vercel.app/login",
     period: "Nov 2025 — Feb 2026"
+  },
+  {
+    title: "AI Research Assistant — Chrome Extension",
+    description: "A production-ready Chrome Extension (Manifest V3) providing AI-powered tools on any webpage. Features include highlight-to-explain, full-page summarization, and context-aware chat (RAG-lite).",
+    tech: ["JavaScript", "Manifest V3", "OpenAI API", "Chrome Extension API", "RAG-lite"],
+    github: "https://github.com/SapotaDA/AI-EXT",
+    period: "Mar — Apr 2026"
   }
 ];
 
