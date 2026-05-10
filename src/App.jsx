@@ -9,7 +9,7 @@ const experience = [
     period: "Nov 2025 — Feb 2026",
     title: "DevOps Intern",
     company: "TCS iON (Tata Consultancy Services)",
-    companyUrl: "https://www.tcsion.com",
+    companyUrl: "https://github.com/SapotaDA/TcsIon-Internship-project",
     description: "Designed and implemented an automated CI/CD pipeline using AWS CodeCommit, CodePipeline, CodeDeploy, and Amazon EC2 for continuous application delivery. Configured IAM roles, AWS CLI, and Apache web server. Automated build and deployment processes, reducing deployment effort by ~40%.",
     tech: ["AWS", "CodePipeline", "CodeDeploy", "EC2", "IAM", "Apache", "CI/CD"]
   }
