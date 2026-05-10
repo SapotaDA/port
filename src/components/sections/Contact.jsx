@@ -78,9 +78,10 @@ export const Contact = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: '#'
+      href: 'https://linkedin.com/in/aaravuniyal'
     }
   ];
+
 
   return (
     <section id="contact" className="py-20 px-6" style={{ backgroundColor: colors.background }}>

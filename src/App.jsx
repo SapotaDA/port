@@ -291,6 +291,7 @@ function Portfolio() {
                 <span style={{ color: 'var(--text-secondary)' }}>Tailwind CSS</span>, deployed with{' '}
                 <span style={{ color: 'var(--text-secondary)' }}>Vercel</span>. All text set in the{' '}
                 <span style={{ color: 'var(--text-secondary)' }}>Inter</span> typeface.
+
               </p>
             </footer>
 

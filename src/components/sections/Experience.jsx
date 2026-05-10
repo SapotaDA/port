@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 
 const experiences = [
   {
@@ -7,16 +7,19 @@ const experiences = [
     company: "TCS iON (Tata Consultancy Services)",
     location: "Bangalore, India",
     period: "Nov 2025 – Feb 2026",
-    description: "Worked on automating deployment workflows and building CI/CD pipelines using AWS services for continuous application delivery.",
+    description:
+      "Worked on automating deployment workflows and building CI/CD pipelines using AWS services for continuous application delivery.",
     achievements: [
       "Designed and implemented an automated CI/CD pipeline using AWS CodeCommit, CodePipeline, CodeDeploy, and Amazon EC2 for continuous application delivery.",
       "Configured IAM roles, AWS CLI, and Apache web server to enable secure and structured deployment workflows.",
       "Automated build and deployment processes, reducing manual intervention and improving release consistency.",
       "Monitored pipeline execution and resolved deployment issues through log analysis and configuration updates."
     ],
-    tech: ["AWS", "CodePipeline", "CodeDeploy", "EC2", "IAM", "Apache", "CI/CD"]
+    tech: ["AWS", "CodePipeline", "CodeDeploy", "EC2", "IAM", "Apache", "CI/CD"],
+    pdfUrl: "/Tcs_Intern.pdf"
   }
 ];
+
 
 export const Experience = () => {
   return (
@@ -107,13 +110,28 @@ export const Experience = () => {
                   </div>
 
                   {/* Tech Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {exp.tech.map((tech) => (
                       <span key={tech} className="tech-tag text-xs">
                         {tech}
                       </span>
                     ))}
                   </div>
+
+                  {/* PDF CTA (mobile-friendly) */}
+                  {exp.pdfUrl ? (
+                    <div className="mt-4">
+                      <a
+                        href={exp.pdfUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors text-sm font-semibold"
+                      >
+                        View TCS Intern PDF
+                      </a>
+                    </div>
+                  ) : null}
+
                 </div>
               </motion.div>
             ))}
