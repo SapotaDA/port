@@ -1,6 +1,7 @@
 import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
 import { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import "./styles/index.css";
 
 /* ─── Data ─── */
@@ -306,6 +307,7 @@ function App() {
   return (
     <ThemeProvider>
       <Portfolio />
+      <Analytics />
     </ThemeProvider>
   );
 }
