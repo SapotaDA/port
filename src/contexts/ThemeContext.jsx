@@ -1,49 +1,28 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
+export const useTheme = () => useContext(ThemeContext);
 
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
+const COLORS = {
+  indigo:  { rgb: '99, 102, 241',  hex: '#6366f1', label: 'Indigo' },
+  cyan:    { rgb: '34, 211, 238',  hex: '#22d3ee', label: 'Cyan' },
+  emerald: { rgb: '16, 185, 129',  hex: '#10b981', label: 'Emerald' },
+  rose:    { rgb: '244, 63, 94',   hex: '#f43f5e', label: 'Rose' },
+  amber:   { rgb: '245, 158, 11',  hex: '#f59e0b', label: 'Amber' },
+  violet:  { rgb: '139, 92, 246',  hex: '#8b5cf6', label: 'Violet' },
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isBright, setIsBright] = useState(false); // Forced dark for Cyberpunk
+  const [accentKey, setAccentKey] = useState(() => localStorage.getItem('accent') || 'indigo');
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.style.setProperty('--bg-color', '#050505');
-    root.style.setProperty('--text-color', '#00fff2');
-    root.style.setProperty('--text-secondary-color', '#9d00ff');
-    root.style.setProperty('--border-color', '#ff00ff');
-    root.style.setProperty('--card-bg', '#0c0c0e');
-    root.style.setProperty('--nav-bg', 'rgba(5, 5, 5, 0.9)');
-    root.style.setProperty('--accent-color', '#ff00ff');
-  }, []);
-
-  const toggleBrightness = () => {
-    // Disabled for Cyberpunk theme consistency
-  };
-
-  const theme = {
-    isBright,
-    toggleBrightness,
-    colors: {
-      background: '#050505',
-      text: '#00fff2',
-      textSecondary: '#9d00ff',
-      border: '#ff00ff',
-      cardBg: '#0c0c0e',
-      navBg: 'rgba(5, 5, 5, 0.9)',
-      accent: '#ff00ff'
-    }
-  };
+    const c = COLORS[accentKey] || COLORS.indigo;
+    document.documentElement.style.setProperty('--accent', c.rgb);
+    localStorage.setItem('accent', accentKey);
+  }, [accentKey]);
 
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={{ accentKey, setAccentKey, colors: COLORS, current: COLORS[accentKey] || COLORS.indigo }}>
       {children}
     </ThemeContext.Provider>
   );

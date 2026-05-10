@@ -1,84 +1,99 @@
 import { motion } from "framer-motion";
-import { useTheme } from '../../contexts/ThemeContext';
-import { Code, Server, Database, Globe } from 'lucide-react';
+import { Target, Rocket, Code, Users } from 'lucide-react';
+
+const highlights = [
+  {
+    icon: Code,
+    title: "Full-Stack Development",
+    description: "Building scalable web applications with React, Node.js, Express.js, and modern databases."
+  },
+  {
+    icon: Rocket,
+    title: "DevOps & Cloud",
+    description: "Hands-on CI/CD pipeline experience with AWS services, Docker, and automated deployment workflows."
+  },
+  {
+    icon: Target,
+    title: "Production-Ready Products",
+    description: "Delivered two production-ready projects with JWT authentication, RESTful APIs, and real-time features."
+  },
+  {
+    icon: Users,
+    title: "Open Source Contributor",
+    description: "Actively contributing to open-source projects and staying current with modern web technologies."
+  }
+];
 
 export const About = () => {
-  const { colors } = useTheme();
-  
-  const skills = [
-    { name: 'React & Next.js', icon: Code, level: 90 },
-    { name: 'Node.js & Express', icon: Server, level: 85 },
-    { name: 'MongoDB & Mongoose', icon: Database, level: 80 },
-    { name: 'REST APIs', icon: Globe, level: 88 }
-  ];
-
   return (
-    <section id="about" className="py-20 px-6 bg-[#050505]">
-      <div className="max-w-4xl mx-auto">
+    <section id="about" className="py-24 px-6" style={{ backgroundColor: '#0a0a0f' }}>
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="mb-16"
         >
-          <h2 className="text-5xl font-black mb-12 text-center text-[#00fff2] neon-text uppercase tracking-tighter">The Journey</h2>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#818cf8' }}>
+            Introduction
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6" style={{ color: '#e4e4e7' }}>
+            About Me
+          </h2>
+          <div className="section-divider mb-8" />
           
-          <div className="space-y-6 text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+          <div className="max-w-3xl space-y-5 text-lg leading-relaxed" style={{ color: '#a1a1aa' }}>
             <p>
-              Every great project starts with a single line of code. My story began with a curiosity for how the digital world works, 
-              which quickly evolved into a mission to build scalable, full-stack solutions. 
-              As a MERN stack developer, I don't just build websites; I create digital homes for ideas.
+              I'm a <span style={{ color: '#e4e4e7' }}>final-year BCA student</span> at Yenepoya University, Bangalore, 
+              and a former <span style={{ color: '#e4e4e7' }}>DevOps Intern at TCS iON</span> (Tata Consultancy Services). 
+              I specialize in building full-stack web applications using React.js, Node.js, and PostgreSQL/MongoDB.
             </p>
             
             <p>
-              With expertise in React, Node.js, and MongoDB, I bridge the gap between complex backend logic and 
-              intuitive frontend experiences. I believe that code is a form of craftsmanship—one that requires 
-              precision, creativity, and a constant thirst for learning.
+              During my internship, I designed and deployed a{' '}
+              <span style={{ color: '#e4e4e7' }}>CI/CD pipeline on AWS</span> that reduced deployment effort by ~40%. 
+              I've delivered two production-ready projects featuring JWT authentication, RESTful APIs, 
+              and real-time booking workflows.
+            </p>
+            
+            <p>
+              I'm seeking a <span style={{ color: '#818cf8' }}>full-stack or backend developer role</span> where I can 
+              contribute to scalable, user-focused products and continue growing as an engineer.
             </p>
           </div>
-          
-          <div className="mt-12 space-y-6">
-            <h3 className="text-2xl font-semibold mb-6" style={{ color: colors.text }}>Technical Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  className="p-6 rounded-lg border"
-                  style={{ 
-                    backgroundColor: colors.cardBg,
-                    borderColor: colors.border
-                  }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="flex items-center space-x-4 mb-4">
-                    <skill.icon size={24} style={{ color: colors.text }} />
-                    <h4 className="text-lg font-medium" style={{ color: colors.text }}>{skill.name}</h4>
-                  </div>
-                  <div className="w-full">
-                    <div className="flex justify-between text-sm mb-2">
-                      <span style={{ color: colors.textSecondary }}>Proficiency</span>
-                      <span style={{ color: colors.text }}>{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 rounded-full overflow-hidden" style={{ backgroundColor: colors.border }}>
-                      <motion.div
-                        className="h-full rounded-full"
-                        style={{ backgroundColor: colors.accent }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </motion.div>
+
+        {/* Highlight Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {highlights.map((item, index) => (
+            <motion.div
+              key={index}
+              className="card p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-start gap-4">
+                <div 
+                  className="p-3 rounded-xl flex-shrink-0"
+                  style={{ background: 'rgba(99, 102, 241, 0.1)' }}
+                >
+                  <item.icon size={22} style={{ color: '#818cf8' }} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#e4e4e7' }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

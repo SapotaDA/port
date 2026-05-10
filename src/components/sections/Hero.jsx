@@ -1,84 +1,139 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
-import { useTheme } from '../../contexts/ThemeContext';
+import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 import HeroCanvas from "../canvas/HeroCanvas";
 
 export const Hero = () => {
-  const { colors } = useTheme();
-  
   return (
-    <section className="relative w-full h-screen mx-auto overflow-hidden bg-[#050505]">
+    <section id="hero" className="relative w-full min-h-screen mx-auto overflow-hidden flex items-center" style={{ backgroundColor: '#0a0a0f' }}>
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
         <HeroCanvas />
       </div>
 
-      <div className={`absolute inset-0 max-w-7xl mx-auto px-6 flex flex-col justify-center items-start z-10`}>
-        <div className="flex items-start gap-5">
-          <div className='flex flex-col justify-center items-center mt-5'>
-            <div className='w-5 h-5 rounded-full bg-[#ff00ff] shadow-[0_0_15px_#ff00ff]' />
-            <div className='w-1 sm:h-80 h-40 bg-gradient-to-b from-[#ff00ff] to-transparent' />
-          </div>
+      {/* Ambient gradient overlays */}
+      <div className="absolute inset-0 z-[1]" style={{
+        background: 'radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%)'
+      }} />
+      <div className="absolute inset-0 z-[1]" style={{
+        background: 'radial-gradient(ellipse at 80% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 50%)'
+      }} />
 
-          <div>
-            <motion.h1 
-              className="text-5xl md:text-8xl font-black mb-4 uppercase tracking-tighter"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <span className="text-[#00fff2] neon-text">Aarav</span>
-              <br />
-              <span className="text-[#ff00ff] neon-text-magenta">Uniyal</span>
-            </motion.h1>
+      <div className="relative max-w-6xl mx-auto px-6 z-10 pt-24">
+        <div className="max-w-3xl">
+          {/* Status Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-6"
+          >
+            <span className="status-badge" style={{ 
+              background: 'rgba(34, 197, 94, 0.1)', 
+              color: '#22c55e',
+              border: '1px solid rgba(34, 197, 94, 0.2)'
+            }}>
+              Open to Opportunities
+            </span>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center gap-4 mb-6"
-            >
-              <div className="h-[2px] w-12 bg-[#00fff2]" />
-              <p className="text-[#00fff2] font-mono tracking-widest uppercase text-sm">
-                System Architect // Storyteller
-              </p>
-            </motion.div>
+          {/* Name */}
+          <motion.h1 
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.95] tracking-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <span style={{ color: '#e4e4e7' }}>Hi, I'm </span>
+            <span className="gradient-text">Aarav</span>
+            <br />
+            <span className="gradient-text">Uniyal</span>
+          </motion.h1>
 
-            <motion.p 
-              className="text-xl md:text-2xl mt-2 max-w-2xl leading-relaxed text-[#9d00ff] font-medium"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              Building the <span className="text-white">next dimension</span> of digital narrative. 
-              Fusing <span className="text-[#00fff2]">code</span> and <span className="text-[#ff00ff]">creativity</span> to 
-              redefine the virtual experience.
-            </motion.p>
+          {/* Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="section-divider" />
+            <p className="font-display text-lg md:text-xl font-medium" style={{ color: '#818cf8' }}>
+              Full-Stack Developer & DevOps Intern
+            </p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-10"
+          {/* Description */}
+          <motion.p 
+            className="text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
+            style={{ color: '#a1a1aa' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            Final-year BCA student with hands-on experience building full-stack 
+            web applications using <span style={{ color: '#e4e4e7' }}>React, Node.js, and AWS</span>. 
+            Passionate about creating scalable, user-focused products.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex flex-wrap items-center gap-4"
+          >
+            <a href="#projects" className="btn-primary" style={{ textDecoration: 'none' }}>
+              View My Work
+              <ArrowDown size={18} />
+            </a>
+            <a href="#contact" className="btn-outline" style={{ textDecoration: 'none' }}>
+              Get in Touch
+            </a>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex items-center gap-4 mt-10"
+          >
+            <a 
+              href="https://github.com/SapotaDA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg border transition-all duration-300"
+              style={{ borderColor: '#27272a', color: '#a1a1aa' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#6366f1'; e.currentTarget.style.color = '#818cf8'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#27272a'; e.currentTarget.style.color = '#a1a1aa'; }}
             >
-              <a 
-                href="#projects" 
-                className="px-10 py-4 bg-transparent border-2 border-[#ff00ff] text-[#ff00ff] font-bold uppercase tracking-widest hover:bg-[#ff00ff] hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(255,0,255,0.3)]"
-              >
-                Initiate Sequence
-              </a>
-            </motion.div>
-          </div>
+              <Github size={20} />
+            </a>
+            <a 
+              href="https://linkedin.com/in/aaravuniyal" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg border transition-all duration-300"
+              style={{ borderColor: '#27272a', color: '#a1a1aa' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#6366f1'; e.currentTarget.style.color = '#818cf8'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#27272a'; e.currentTarget.style.color = '#a1a1aa'; }}
+            >
+              <Linkedin size={20} />
+            </a>
+            <span className="text-sm ml-2" style={{ color: '#71717a' }}>Delhi, India</span>
+          </motion.div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 w-full flex justify-center items-center z-10">
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 w-full flex justify-center items-center z-10">
         <a href="#about">
-          <div className="w-[30px] h-[50px] rounded-3xl border-2 border-[#00fff2] flex justify-center items-start p-2">
+          <div className="w-[28px] h-[46px] rounded-full border-2 flex justify-center items-start p-2" style={{ borderColor: '#3f3f46' }}>
             <motion.div
-              animate={{ y: [0, 18, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
-              className='w-2 h-2 rounded-full bg-[#00fff2] shadow-[0_0_10px_#00fff2]'
+              animate={{ y: [0, 16, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, repeatType: "loop" }}
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: '#6366f1' }}
             />
           </div>
         </a>
