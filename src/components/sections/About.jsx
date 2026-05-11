@@ -51,10 +51,10 @@ export const About = () => {
             </p>
             
             <p>
-              During my internship, I designed and deployed a{' '}
-              <span style={{ color: '#e4e4e7' }}>CI/CD pipeline on AWS</span> that reduced deployment effort by ~40%. 
-              I've delivered two production-ready projects featuring JWT authentication, RESTful APIs, 
-              and real-time booking workflows.
+              During my internship at TCS iON, I designed and implemented a fully automated{' '}
+              <span style={{ color: '#e4e4e7' }}>CI/CD pipeline on AWS</span> using CodeCommit, CodePipeline, CodeDeploy, and EC2. 
+              I solved critical challenges like service naming conflicts (httpd vs apache2) and established a 
+              complete DevOps workflow that automatically deploys code changes to a live web server within minutes of a commit.
             </p>
             
             <p>
