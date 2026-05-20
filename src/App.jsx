@@ -65,10 +65,13 @@ function ColorPicker() {
 }
 
 /* ─── Main Layout ─── */
+import { ContinuousScrollMarquee } from './components/ui/ContinuousScrollMarquee.jsx';
+
 function Portfolio() {
   const [activeSection, setActiveSection] = useState('about');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const mainRef = useRef(null);
+
 
   // Mouse spotlight
   useEffect(() => {
@@ -161,6 +164,29 @@ function Portfolio() {
 
           {/* ══════ RIGHT PANEL (Scrolls) ══════ */}
           <main ref={mainRef} id="content" className="pt-24 lg:w-1/2 lg:py-24">
+
+            {/* Continuous scroll highlights (no changes to About/Experience/Projects sections) */}
+            <div className="mb-8">
+              <div className="section-heading">Highlights</div>
+              <div className="mt-4">
+                <ContinuousScrollMarquee
+                  className="block"
+                  items={[
+
+                    'React',
+                    'Node.js',
+                    'AWS',
+                    'CI/CD',
+                    'Docker',
+                    'PostgreSQL',
+                    'JWT',
+                    'Drizzle ORM',
+                  ]}
+                  speed={22}
+                />
+              </div>
+            </div>
+
 
             {/* ── ABOUT ── */}
             <section id="about" className="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24">

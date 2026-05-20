@@ -104,6 +104,50 @@ body {
 }
 .social-icon:hover { color: var(--text); }
 
+/* Continuous marquee */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 18px;
+  white-space: nowrap;
+  will-change: transform;
+  /* Ensure animation actually runs on first paint */
+  animation-name: marquee-move;
+  animation-duration: var(--marquee-speed, 35s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.marquee-track.paused {
+  animation-play-state: paused;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(var(--accent), 0.14);
+  background: rgba(var(--accent), 0.06);
+  color: rgba(var(--accent), 1);
+}
+
+@keyframes marquee-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Responsive: on mobile, sections get a sticky heading background */
 @media (max-width: 1024px) {
   .section-heading { display: block; }
@@ -114,3 +158,4 @@ body {
     backdrop-filter: none; margin-bottom: 16px;
   }
 }
+
