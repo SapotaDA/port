@@ -97,6 +97,7 @@ function Portfolio() {
 
   return (
     <div className="relative">
+      <div className="vibe-bg" />
       {/* Cursor Spotlight */}
       <div
         className="spotlight"

@@ -18,7 +18,7 @@ const HeroCanvas = () => {
           <Float speed={1.75} rotationIntensity={1} floatIntensity={1}>
             <Sphere args={[1, 100, 200]} scale={1.8}>
               <MeshDistortMaterial
-                color="#915EFF"
+                color="#10b981"
                 attach="material"
                 distort={0.4}
                 speed={1.5}

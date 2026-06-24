@@ -38,7 +38,7 @@ export const Skills = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#818cf8' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#34d399' }}>
             What I Work With
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: '#e4e4e7' }}>

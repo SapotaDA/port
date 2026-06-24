@@ -29,7 +29,7 @@ export const Experience = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#818cf8' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#34d399' }}>
             Where I've Worked
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: '#e4e4e7' }}>
@@ -64,7 +64,7 @@ export const Experience = () => {
                       <h3 className="font-display text-2xl font-bold mb-1" style={{ color: '#e4e4e7' }}>
                         {exp.title}
                       </h3>
-                      <p className="text-lg font-medium mb-3" style={{ color: '#818cf8' }}>
+                      <p className="text-lg font-medium mb-3" style={{ color: '#34d399' }}>
                         {exp.company}
                       </p>
                     </div>
@@ -97,7 +97,7 @@ export const Experience = () => {
                       >
                         <div 
                           className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: '#6366f1' }}
+                          style={{ backgroundColor: 'rgba(var(--accent), 1)' }}
                         />
                         <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                           {achievement}

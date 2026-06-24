@@ -35,7 +35,7 @@ export const About = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#818cf8' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#34d399' }}>
             Introduction
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6" style={{ color: '#e4e4e7' }}>
@@ -58,7 +58,7 @@ export const About = () => {
             </p>
             
             <p>
-              I'm seeking a <span style={{ color: '#818cf8' }}>full-stack or backend developer role</span> where I can 
+              I'm seeking a <span style={{ color: '#34d399' }}>full-stack or backend developer role</span> where I can 
               contribute to scalable, user-focused products and continue growing as an engineer.
             </p>
           </div>
@@ -78,9 +78,9 @@ export const About = () => {
               <div className="flex items-start gap-4">
                 <div 
                   className="p-3 rounded-xl flex-shrink-0"
-                  style={{ background: 'rgba(99, 102, 241, 0.1)' }}
+                  style={{ background: 'rgba(var(--accent), 0.08)' }}
                 >
-                  <item.icon size={22} style={{ color: '#818cf8' }} />
+                  <item.icon size={22} style={{ color: 'rgba(var(--accent), 1)' }} />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#e4e4e7' }}>

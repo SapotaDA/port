@@ -41,7 +41,7 @@ export const Projects = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#818cf8' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#34d399' }}>
             What I've Built
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: '#e4e4e7' }}>
@@ -86,9 +86,9 @@ export const Projects = () => {
                         }}
                         whileHover={{ scale: 1.03 }}
                         onMouseEnter={(e) => { 
-                          e.currentTarget.style.borderColor = '#6366f1'; 
-                          e.currentTarget.style.color = '#818cf8';
-                          e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)';
+                          e.currentTarget.style.borderColor = '#10b981'; 
+                          e.currentTarget.style.color = '#34d399';
+                          e.currentTarget.style.background = 'rgba(var(--accent), 0.08)';
                         }}
                         onMouseLeave={(e) => { 
                           e.currentTarget.style.borderColor = '#27272a'; 
@@ -137,7 +137,7 @@ export const Projects = () => {
                     >
                       <div 
                         className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
-                        style={{ backgroundColor: '#6366f1' }}
+                        style={{ backgroundColor: 'rgba(var(--accent), 1)' }}
                       />
                       <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                         {highlight}
