@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --accent: 99, 102, 241;
-  --bg: #0a0a0f;
-  --bg-card: #16161e;
-  --text: #e4e4e7;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --border: #1e293b;
+  --accent: 16, 185, 129; /* emerald */
+  --accent-emerald: 52, 211, 153;
+  --accent-forest: 6, 150, 100;
+  --bg: #07070a;
+  --bg-card: #0f0f12;
+  --text: #e6eef8;
+  --text-secondary: #9aa6c2;
+  --text-muted: #6b7280;
+  --border: #0b0d0b;
 }
 
 html { scroll-behavior: smooth; }
@@ -22,6 +24,22 @@ body {
   overflow-x: hidden;
   margin: 0;
   line-height: 1.7;
+}
+
+/* Display font utility used for large headings */
+.font-display { font-family: 'Space Grotesk', Inter, -apple-system, BlinkMacSystemFont, sans-serif; }
+
+/* Glow utility for neon-like text */
+.glow {
+  text-shadow: 0 6px 30px rgba(var(--accent), 0.12), 0 2px 8px rgba(var(--accent-purple), 0.08);
+}
+
+/* Subtle full-screen gradient background to set the vibe */
+.vibe-bg {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(800px circle at 10% 10%, rgba(var(--accent-purple), 0.12), transparent 10%),
+              radial-gradient(600px circle at 90% 30%, rgba(var(--accent), 0.06), transparent 20%),
+              linear-gradient(180deg, rgba(7,7,10,1) 0%, rgba(10,10,14,1) 100%);
 }
 
 ::selection { background: rgba(var(--accent), 0.3); color: #fff; }
@@ -106,7 +124,7 @@ body {
 
 /* Hero vibe utilities */
 .gradient-text {
-  background: linear-gradient(90deg, rgba(var(--accent), 1), rgba(139, 92, 246, 1));
+  background: linear-gradient(90deg, rgba(var(--accent), 1), rgba(var(--accent-purple), 1) 55%, rgba(var(--accent-pink), 0.9));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

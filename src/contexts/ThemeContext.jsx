@@ -13,7 +13,7 @@ const COLORS = {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [accentKey, setAccentKey] = useState(() => localStorage.getItem('accent') || 'indigo');
+  const [accentKey, setAccentKey] = useState(() => localStorage.getItem('accent') || 'emerald');
 
   useEffect(() => {
     const c = COLORS[accentKey] || COLORS.indigo;

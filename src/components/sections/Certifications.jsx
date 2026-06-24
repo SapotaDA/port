@@ -43,7 +43,7 @@ export const Certifications = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#818cf8' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#34d399' }}>
             Continuous Learning
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: '#e4e4e7' }}>
@@ -65,15 +65,15 @@ export const Certifications = () => {
               <div className="flex items-start gap-4">
                 <div 
                   className="p-3 rounded-xl flex-shrink-0"
-                  style={{ background: 'rgba(99, 102, 241, 0.1)' }}
+                  style={{ background: 'rgba(var(--accent), 0.08)' }}
                 >
-                  <Award size={22} style={{ color: '#818cf8' }} />
+                  <Award size={22} style={{ color: 'rgba(var(--accent), 1)' }} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold mb-1 leading-snug" style={{ color: '#e4e4e7' }}>
                     {cert.title}
                   </h3>
-                  <p className="text-sm font-medium mb-2" style={{ color: '#818cf8' }}>
+                  <p className="text-sm font-medium mb-2" style={{ color: '#34d399' }}>
                     {cert.platform}
                   </p>
                   <div className="flex flex-wrap items-center gap-4 text-xs" style={{ color: '#71717a' }}>
@@ -91,9 +91,9 @@ export const Certifications = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs mt-3 transition-colors duration-200"
-                      style={{ color: '#6366f1' }}
-                      onMouseEnter={(e) => e.target.style.color = '#818cf8'}
-                      onMouseLeave={(e) => e.target.style.color = '#6366f1'}
+                      style={{ color: 'rgba(var(--accent), 1)' }}
+                      onMouseEnter={(e) => e.target.style.color = 'rgba(var(--accent-emerald), 1)'}
+                      onMouseLeave={(e) => e.target.style.color = 'rgba(var(--accent), 1)'}
                     >
                       <ExternalLink size={12} />
                       Verify Credential

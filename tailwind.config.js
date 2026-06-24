@@ -7,12 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0f172a",
-        secondary: "#1e293b",
-        accent: "#38bdf8",
+        primary: "#0a0a0f",
+        secondary: "#171720",
+        accent: "#10b981",
+        accentEmerald: "#34d399",
+        accentForest: "#059669",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
       },
     },
   },

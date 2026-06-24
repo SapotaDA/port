@@ -12,10 +12,10 @@ export const Hero = () => {
 
       {/* Ambient gradient overlays */}
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%)'
+        background: 'radial-gradient(ellipse at 20% 50%, rgba(var(--accent), 0.08) 0%, transparent 60%)'
       }} />
       <div className="absolute inset-0 z-[1]" style={{
-        background: 'radial-gradient(ellipse at 80% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 50%)'
+        background: 'radial-gradient(ellipse at 80% 30%, rgba(var(--accent-emerald), 0.06) 0%, transparent 50%)'
       }} />
 
       <div className="relative max-w-6xl mx-auto px-6 z-10 pt-24">
@@ -38,7 +38,7 @@ export const Hero = () => {
 
           {/* Name */}
           <motion.h1 
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.95] tracking-tight"
+            className="font-display glow text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[0.95] tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -57,7 +57,7 @@ export const Hero = () => {
             className="flex items-center gap-3 mb-6"
           >
             <div className="section-divider" />
-            <p className="font-display text-lg md:text-xl font-medium" style={{ color: '#818cf8' }}>
+            <p className="font-display text-lg md:text-xl font-medium" style={{ color: '#34d399' }}>
               Full-Stack Developer & DevOps Intern
             </p>
           </motion.div>
@@ -104,7 +104,7 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg border transition-all duration-300"
               style={{ borderColor: '#27272a', color: '#a1a1aa' }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#6366f1'; e.currentTarget.style.color = '#818cf8'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#10b981'; e.currentTarget.style.color = '#34d399'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#27272a'; e.currentTarget.style.color = '#a1a1aa'; }}
             >
               <Github size={20} />
@@ -115,7 +115,7 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg border transition-all duration-300"
               style={{ borderColor: '#27272a', color: '#a1a1aa' }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#6366f1'; e.currentTarget.style.color = '#818cf8'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#10b981'; e.currentTarget.style.color = '#34d399'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#27272a'; e.currentTarget.style.color = '#a1a1aa'; }}
             >
               <Linkedin size={20} />
@@ -133,7 +133,7 @@ export const Hero = () => {
               animate={{ y: [0, 16, 0] }}
               transition={{ duration: 1.8, repeat: Infinity, repeatType: "loop" }}
               className="w-1.5 h-1.5 rounded-full"
-              style={{ backgroundColor: '#6366f1' }}
+              style={{ backgroundColor: 'rgba(var(--accent), 1)' }}
             />
           </div>
         </a>
